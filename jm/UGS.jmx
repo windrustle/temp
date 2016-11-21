@@ -96,7 +96,7 @@ if(!prev.isSuccessful()){
           <stringProp name="dataSource">z${stand}usersdb</stringProp>
           <stringProp name="query">insert into users.esia_users
 (userid,username,firstname,lastname,middlename,personinn,personsnils,personogrn,personemail,authnmethod,authtoken,persontype,globalrole,memberofgroups,orgaddresses,orgcontacts,orgoid,orgkpp,orglegalform,orginn,orgname,orgshortname,orgogrn,orgposition,orgtype,password,gender,birthdate,orgbranchkpp,principaldocuments,principalcontacts)
-values((select uuid_generate_v4()),${user},&apos;Тест&apos;,&apos;Тестов&apos;,&apos;Тестович&apos;,${pinn},null,${pogrn},&apos;test@test.ts&apos;,&apos;DS&apos;,(select uuid_generate_v4()),null,&apos;E&apos;,&apos;ADMIN, AUTHORIZED_SPECIALIST&apos;,&apos;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;orgaddresses&gt;&lt;/orgaddresses&gt;&apos;,&apos;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;orgcontacts&gt;&lt;contact&gt;&lt;contacttype&gt;PHN&lt;/contacttype&gt;&lt;value&gt;+7(900)0000000&lt;/value&gt;&lt;verificationstatus&gt;Y&lt;/verificationstatus&gt;&lt;/contact&gt;&lt;contact&gt;&lt;contacttype&gt;EML&lt;/contacttype&gt;&lt;value&gt;test@test.ts&lt;/value&gt;&lt;verificationstatus&gt;Y&lt;/verificationstatus&gt;&lt;/contact&gt;&lt;/orgcontacts&gt;&apos;,${oid},${hkpp},${okopf},${inn},${fname},${sname},${ogrn},&apos;Директор&apos;,${type},&apos;RuRKoLwh2Kgm15NE3zi+Sw==&apos;,&apos;MALE&apos;,&apos;01.01.1980&apos;,${bkpp},null,null)
+values((select uuid_generate_v4()),${user},&apos;Тест&apos;,&apos;Тестов&apos;,&apos;Тестович&apos;,${pinn},null,${pogrn},&apos;test@test.ts&apos;,&apos;DS&apos;,(select uuid_generate_v4()),null,&apos;E&apos;,&apos;ADMIN, AUTHORIZED_SPECIALIST&apos;,&apos;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;orgaddresses&gt;&lt;/orgaddresses&gt;&apos;,&apos;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;orgcontacts&gt;&lt;contact&gt;&lt;contacttype&gt;PHN&lt;/contacttype&gt;&lt;value&gt;88000000000&lt;/value&gt;&lt;verificationstatus&gt;Y&lt;/verificationstatus&gt;&lt;/contact&gt;&lt;contact&gt;&lt;contacttype&gt;EML&lt;/contacttype&gt;&lt;value&gt;test@test.ts&lt;/value&gt;&lt;verificationstatus&gt;Y&lt;/verificationstatus&gt;&lt;/contact&gt;&lt;/orgcontacts&gt;&apos;,${oid},${hkpp},${okopf},${inn},${fname},${sname},&apos;${ogrn}&apos;,&apos;Директор&apos;,${type},&apos;RuRKoLwh2Kgm15NE3zi+Sw==&apos;,&apos;MALE&apos;,&apos;01.01.1980&apos;,${bkpp},null,null)
 returning userid u;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
@@ -195,8 +195,8 @@ returning userid;</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="script">log.warn(prev.getSampleLabel()+&quot;. request: &quot;+prev.getSamplerData().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;)+&quot;, response: &quot;+prev.getResponseDataAsString().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 if(!prev.isSuccessful()){
-	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to insert admin role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
-	log.error(&quot;Failed to insert admin role to DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
+	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to insert role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
+	log.error(&quot;Failed to insert role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 }</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223PostProcessor>
@@ -223,8 +223,8 @@ returning userid;</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="script">log.warn(prev.getSampleLabel()+&quot;. request: &quot;+prev.getSamplerData().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;)+&quot;, response: &quot;+prev.getResponseDataAsString().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 if(!prev.isSuccessful()){
-	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to insert admin role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
-	log.error(&quot;Failed to insert admin role to DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
+	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to insert role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
+	log.error(&quot;Failed to insert role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 }</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223PostProcessor>
@@ -251,8 +251,8 @@ returning userid;</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="script">log.warn(prev.getSampleLabel()+&quot;. request: &quot;+prev.getSamplerData().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;)+&quot;, response: &quot;+prev.getResponseDataAsString().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 if(!prev.isSuccessful()){
-	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to insert admin role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
-	log.error(&quot;Failed to insert admin role to DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
+	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to insert role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
+	log.error(&quot;Failed to insert role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 }</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223PostProcessor>
@@ -279,8 +279,8 @@ returning userid;</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="script">log.warn(prev.getSampleLabel()+&quot;. request: &quot;+prev.getSamplerData().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;)+&quot;, response: &quot;+prev.getResponseDataAsString().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 if(!prev.isSuccessful()){
-	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to insert admin role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
-	log.error(&quot;Failed to insert admin role to DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
+	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to insert role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
+	log.error(&quot;Failed to insert role to ESIA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 }</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
           </JSR223PostProcessor>
@@ -341,7 +341,7 @@ void JDBC (String host,String base){
 }
 try{
 	PGAS=[PSI02:&quot;localhost:20327&quot;,FT01:&quot;localhost:20417&quot;,GERA:&quot;localhost:20525&quot;,DEMO3:&quot;localhost:20526&quot;,DEMO4:&quot;localhost:20527&quot;,IZOLDA:&quot;localhost:20528&quot;,DEMO:&quot;localhost:20529&quot;,HELGA:&quot;localhost:20530&quot;,DEMO2:&quot;localhost:20531&quot;,KPAK:&quot;localhost:20612&quot;,PAMINTA:&quot;95.213.229.207:20354&quot;,AURA:&quot;95.213.229.207:21054&quot;,NT:&quot;172.16.202.8:5454&quot;,PODV:&quot;192.168.88.157:5432&quot;]
-	IDPS=[PSI02:&quot;localhost:20506&quot;,FT01:&quot;localhost:20506&quot;,GERA:&quot;localhost:20506&quot;,DEMO3:&quot;localhost:20506&quot;,DEMO4:&quot;localhost:20506&quot;,IZOLDA:&quot;localhost:20506&quot;,DEMO:&quot;localhost:20506&quot;,HELGA:&quot;localhost:20506&quot;,DEMO2:&quot;localhost:20506&quot;,KPAK:&quot;localhost:20506&quot;,PAMINTA:&quot;localhost:20506&quot;,AURA:&quot;localhost:20506&quot;,NT:&quot;172.16.202.37:5432&quot;,PODV:&quot;192.168.88.157:5432&quot;]
+	IDPS=[PSI02:&quot;localhost:20506&quot;,FT01:&quot;localhost:20506&quot;,GERA:&quot;localhost:20506&quot;,DEMO3:&quot;localhost:20506&quot;,DEMO4:&quot;localhost:20506&quot;,IZOLDA:&quot;localhost:20506&quot;,DEMO:&quot;localhost:20506&quot;,HELGA:&quot;localhost:20506&quot;,DEMO2:&quot;localhost:20506&quot;,KPAK:&quot;localhost:20506&quot;,PAMINTA:&quot;172.16.204.6:5432&quot;,AURA:&quot;localhost:20506&quot;,NT:&quot;172.16.202.37:5432&quot;,PODV:&quot;192.168.88.157:5432&quot;]
 	idp=IDPS[vars.get(&quot;stand&quot;)];
 	pga=PGAS[vars.get(&quot;stand&quot;)];
 	vars.put(&quot;idp&quot;,idp);
@@ -374,7 +374,7 @@ if(!prev.isSuccessful()){
           </hashTree>
           <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="DR ppa_organizations sel" enabled="true">
             <stringProp name="dataSource">z${stand}hcsppadb</stringProp>
-            <stringProp name="query">select org_oid oid, inn, kpp, okopf_code okc, organization_full_name ofn, organization_short_name osn, organization_type typ,&apos;${__RandomString(12,1234567890)}&apos; pin, ogrn ogr from ppasm.ppa_organizations where status=&apos;REGISTERED&apos; and relationship=&apos;HEAD&apos; limit 10;</stringProp>
+            <stringProp name="query">select org_oid oid, inn, kpp, okopf_code okc, organization_full_name ofn, organization_short_name osn, organization_type typ,&apos;${__RandomString(12,1234567890)}&apos; pin, ogrn ogr from ppasm.ppa_organizations where status=&apos;REGISTERED&apos; and relationship=&apos;HEAD&apos;;</stringProp>
             <stringProp name="queryArguments"></stringProp>
             <stringProp name="queryArgumentsTypes"></stringProp>
             <stringProp name="queryTimeout"></stringProp>
@@ -390,7 +390,7 @@ if(!prev.isSuccessful()){
               <stringProp name="parameters"></stringProp>
               <stringProp name="script">log.warn(prev.getSampleLabel()+&quot;. request: &quot;+prev.getSamplerData().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;)+&quot;, response: &quot;+prev.getResponseDataAsString().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 if(!prev.isSuccessful()){
-	log.error(&quot;Failed to obtain OGRN list from PPA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
+	log.error(&quot;Failed to obtain data from PPA DB: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 prev.setStopTest(true);
 }</stringProp>
               <stringProp name="scriptLanguage">groovy</stringProp>
@@ -410,19 +410,17 @@ while(!fos){fos=new FileOutputStream(&quot;users&quot;,true);}
 if(vars.get(&quot;count&quot;)){
 	vars.put(&quot;i&quot;,(vars.get(&quot;i&quot;).toInteger()+1).toString());
 	if(vars.get(&quot;error&quot;)){
-		fos.write((new SimpleDateFormat(&quot;yyyy.MM.dd HH:mm:ss&quot;).format(new Date())+&quot;,&quot;+vars.get(&quot;stand&quot;)+&quot;_&quot;+vars.get(&quot;ogrn&quot;)+&quot;. ERROR: &quot;+vars.get(&quot;error&quot;)+&quot;\r\n&quot;).getBytes(&quot;UTF-8&quot;));
+		fos.write((new SimpleDateFormat(&quot;yyyy.MM.dd HH:mm:ss&quot;).format(new Date())+&quot;, &quot;+vars.get(&quot;stand&quot;)+&quot;_&quot;+vars.get(&quot;ogrn&quot;)+&quot; (ERROR: &quot;+vars.get(&quot;error&quot;)+&quot;)\r\n&quot;).getBytes(&quot;UTF-8&quot;));
 	}else{
-		fos.write((new SimpleDateFormat(&quot;yyyy.MM.dd HH:mm:ss&quot;).format(new Date())+&quot;,&quot;+vars.get(&quot;stand&quot;)+&quot;_&quot;+vars.get(&quot;ogrn&quot;)+&quot;. SUCCESS: &quot;+vars.get(&quot;pinn&quot;)+(vars.get(&quot;bkpp&quot;)?&quot; + Подразделения&quot;:&quot;&quot;)+&quot;\r\n&quot;).getBytes(&quot;UTF-8&quot;));
+		fos.write((new SimpleDateFormat(&quot;yyyy.MM.dd HH:mm:ss&quot;).format(new Date())+&quot;, &quot;+vars.get(&quot;stand&quot;)+&quot;_&quot;+vars.get(&quot;ogrn&quot;)+(vars.get(&quot;bkpp&quot;)!=&quot;null&quot;?&quot; (+ подразделения)&quot;:&quot;&quot;)+&quot;\r\n&quot;).getBytes(&quot;UTF-8&quot;));
 	}
 	vars.remove(&quot;error&quot;);
 	vars.remove(&quot;zokopf&quot;);
 	vars.remove(&quot;zuser&quot;);
 	vars.remove(&quot;zkpps&quot;);
-	vars.remove(&quot;cnt&quot;);
-	vars.remove(&quot;j&quot;);
 }else{
 	vars.put(&quot;count&quot;,vars.getObject(&quot;zppas&quot;).size().toString());
-	fos.write(&quot;Время, Логин, ИНН, ОГРНИП, КПП, КПП ОП, Тип\r\n&quot;.getBytes(&quot;UTF-8&quot;));
+	fos.write(&quot;Время, Логин (дополнительная информация)\r\n&quot;.getBytes(&quot;UTF-8&quot;));
 }
 fos.flush();
 fos.close();
@@ -450,8 +448,8 @@ if(!prev.isSuccessful()){
           <stringProp name="parameters"></stringProp>
           <stringProp name="script">try{
 	HashMap hm=vars.getObject(&quot;zppas&quot;)[vars.get(&quot;i&quot;).toInteger()];
-	vars.put(&quot;ogrn&quot;,hm.ogr?&quot;&apos;&quot;+hm.ogr+&quot;&apos;&quot;:&quot;null&quot;);
-	vars.put(&quot;user&quot;,hm.ogr?&quot;&apos;&quot;+vars.get(&quot;stand&quot;)+&quot;_&quot;+hm.ogr+&quot;&apos;&quot;:&quot;null&quot;);
+	vars.put(&quot;ogrn&quot;,hm.ogr?:&quot;null&quot;);
+	vars.put(&quot;user&quot;,&quot;&apos;&quot;+vars.get(&quot;stand&quot;)+&quot;_&quot;+vars.get(&quot;ogrn&quot;)+&quot;&apos;&quot;);
 	vars.put(&quot;oid&quot;,hm.oid?&quot;&apos;&quot;+hm.oid+&quot;&apos;&quot;:&quot;null&quot;);
 	vars.put(&quot;inn&quot;,hm.inn?&quot;&apos;&quot;+hm.inn+&quot;&apos;&quot;:&quot;null&quot;);
 	vars.put(&quot;okopf&quot;,hm.okc?&quot;&apos;&quot;+hm.okc+&quot;&apos;&quot;:&quot;null&quot;);
@@ -482,8 +480,8 @@ if(!prev.isSuccessful()){
             <stringProp name="parameters"></stringProp>
             <stringProp name="script">log.warn(prev.getSampleLabel()+&quot;. USER=&quot;+vars.get(&quot;user&quot;)+&quot;, ORGID=&quot;+vars.get(&quot;oid&quot;)+&quot;, INN=&quot;+vars.get(&quot;inn&quot;)+&quot;, OKOPF=&quot;+vars.get(&quot;okopf&quot;)+&quot;, FULLNAME=&quot;+vars.get(&quot;fname&quot;)+&quot;, SHORTNAME=&quot;+vars.get(&quot;sname&quot;)+&quot;, TYPE=&quot;+vars.get(&quot;type&quot;)+&quot;, BRANCHKPP=&quot;+vars.get(&quot;bkpp&quot;)+&quot;, HEADKPP=&quot;+vars.get(&quot;hkpp&quot;)+&quot;, PERSONINN=&quot;+vars.get(&quot;pinn&quot;)+&quot;, OGRNIP=&quot;+vars.get(&quot;pogrn&quot;)+&quot;, OGRN=&quot;+vars.get(&quot;ogrn&quot;));
 if(!prev.isSuccessful()){
-	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to parse OGRN: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
-	log.error(&quot;Failed to parse OGRN: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
+	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to parse data: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
+	log.error(&quot;Failed to parse data: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 	prev.setStopTest(true);
 }
 </stringProp>
@@ -493,7 +491,7 @@ if(!prev.isSuccessful()){
         </hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="DR or_managing_persons ins" enabled="true">
           <stringProp name="dataSource">z${stand}hcsordb</stringProp>
-          <stringProp name="query">with ids as (select guid g,root_entity_guid r,public.uuid_generate_v4() u from orsm.or_organization_common where ogrn=${ogrn} and actual=true limit 1)
+          <stringProp name="query">with ids as (select guid g,root_entity_guid r,public.uuid_generate_v4() u from orsm.or_organization_common where ogrn=&apos;${ogrn}&apos; and actual=true limit 1)
 insert into orsm.or_managing_persons
 (guid,root_entity_guid,organization_guid,organization_root_entity_guid,is_actual,last_editing_date,source_date,grn,ogrnip,inn,post_name,phone,first_name,middle_name,last_name,person_type)
 values((select u from ids),(select u from ids),(select g from ids),(select r from ids),true,current_timestamp,current_timestamp,&apos;1232145&apos;,null,${pinn},&apos;Директор&apos;,&apos;88000000000&apos;,&apos;Тест&apos;,&apos;Тестович&apos;,&apos;Тестов&apos;,&apos;P&apos;)
@@ -530,7 +528,7 @@ if(!prev.isSuccessful()){
         <hashTree/>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="DR ppa_organizations sel" enabled="true">
           <stringProp name="dataSource">z${stand}hcsppadb</stringProp>
-          <stringProp name="query">select kpp kpp, okopf_code okc from ppasm.ppa_organizations where ogrn=${ogrn} and status=&apos;REGISTERED&apos; and relationship=&apos;BRANCH&apos;;</stringProp>
+          <stringProp name="query">select kpp kpp, okopf_code okc from ppasm.ppa_organizations where ogrn=&apos;${ogrn}&apos; and status=&apos;REGISTERED&apos; and relationship=&apos;BRANCH&apos;;</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -572,10 +570,10 @@ if(!prev.isSuccessful()){
             <stringProp name="cacheKey">c13e6c94-2dad-4c07-b505-60b0bdfcba7b</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="script">log.warn(prev.getSampleLabel()+&quot;. ITERATOR2=&quot;+vars.get(&quot;j&quot;)+&quot;, COUNTER2=&quot;+vars.get(&quot;cnt&quot;));
+            <stringProp name="script">log.warn(prev.getSampleLabel()+&quot;. KPPCOUNTER=&quot;+vars.get(&quot;cnt&quot;));
 if(!prev.isSuccessful()){
-	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to initialize counter2: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
-	log.error(&quot;Failed to initialize counter2: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
+	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to initialize counter: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
+	log.error(&quot;Failed to initialize counter: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 }
 </stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
@@ -596,7 +594,7 @@ if(!prev.isSuccessful()){
             <stringProp name="script">try{
 	HashMap hm=vars.getObject(&quot;zkpps&quot;)[vars.get(&quot;j&quot;).toInteger()];
 	vars.put(&quot;j&quot;,(vars.get(&quot;j&quot;).toInteger()+1).toString());
-	vars.put(&quot;user&quot;,hm.kpp?&quot;&apos;&quot;+vars.get(&quot;stand&quot;)+&quot;_&quot;+vars.get(&quot;ogrn&quot;)+&quot;_&quot;+hm.kpp+&quot;&apos;&quot;:&quot;null&quot;);
+	vars.put(&quot;user&quot;,&quot;&apos;&quot;+vars.get(&quot;stand&quot;)+&quot;_&quot;+vars.get(&quot;ogrn&quot;)+&quot;_&quot;+hm?.kpp+&quot;&apos;&quot;);
 	vars.put(&quot;okopf&quot;,hm.okc?&quot;&apos;&quot;+hm.okc+&quot;&apos;&quot;:&quot;null&quot;);
 	vars.put(&quot;bkpp&quot;,hm.kpp?&quot;&apos;&quot;+hm.kpp+&quot;&apos;&quot;:&quot;null&quot;);
 	vars.put(&quot;pinn&quot;,&quot;null&quot;);
@@ -613,8 +611,8 @@ if(!prev.isSuccessful()){
               <stringProp name="parameters"></stringProp>
               <stringProp name="script">log.warn(prev.getSampleLabel()+&quot;. ITERATOR2=&quot;+vars.get(&quot;j&quot;)+&quot;, USER=&quot;+vars.get(&quot;user&quot;)+&quot;, OKOPF=&quot;+vars.get(&quot;okopf&quot;)+&quot;, BRANCHKPP=&quot;+vars.get(&quot;bkpp&quot;));
 if(!prev.isSuccessful()){
-	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to parse organization data: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
-	log.error(&quot;Failed to parse organization data: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
+	if(!vars.get(&quot;error&quot;)){vars.put(&quot;error&quot;,&quot;Failed to parse data: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));}
+	log.error(&quot;Failed to parse data: &quot;+prev.getResponseMessage().replaceAll(&quot;[\r\n]&quot;,&quot; &quot;));
 }
 </stringProp>
               <stringProp name="scriptLanguage">groovy</stringProp>
@@ -631,7 +629,7 @@ if(!prev.isSuccessful()){
           <hashTree/>
         </hashTree>
       </hashTree>
-      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="false">
+      <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="true">
         <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
           <collectionProp name="Arguments.arguments">
             <elementProp name="graphiteMetricsSender" elementType="Argument">
@@ -678,42 +676,6 @@ if(!prev.isSuccessful()){
         </elementProp>
         <stringProp name="classname">org.apache.jmeter.visualizers.backend.graphite.GraphiteBackendListenerClient</stringProp>
       </BackendListener>
-      <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
-        <objProp>
-          <name>saveConfig</name>
-          <value class="SampleSaveConfiguration">
-            <time>true</time>
-            <latency>true</latency>
-            <timestamp>true</timestamp>
-            <success>true</success>
-            <label>true</label>
-            <code>true</code>
-            <message>true</message>
-            <threadName>true</threadName>
-            <dataType>true</dataType>
-            <encoding>false</encoding>
-            <assertions>true</assertions>
-            <subresults>true</subresults>
-            <responseData>false</responseData>
-            <samplerData>false</samplerData>
-            <xml>false</xml>
-            <fieldNames>true</fieldNames>
-            <responseHeaders>false</responseHeaders>
-            <requestHeaders>false</requestHeaders>
-            <responseDataOnError>false</responseDataOnError>
-            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-            <assertionsResultsToSave>0</assertionsResultsToSave>
-            <bytes>true</bytes>
-            <sentBytes>true</sentBytes>
-            <threadCounts>true</threadCounts>
-            <idleTime>true</idleTime>
-            <connectTime>true</connectTime>
-          </value>
-        </objProp>
-        <stringProp name="filename"></stringProp>
-      </ResultCollector>
       <hashTree/>
     </hashTree>
   </hashTree>
