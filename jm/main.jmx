@@ -2,7 +2,7 @@
 <jmeterTestPlan version="1.2" properties="3.1" jmeter="3.1 r1768251">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
-      <stringProp name="TestPlan.comments">UC01_Create_Org_paicing. Если не заданa, то в HCSAUTOTES-400_org.jmx будет использоваться очень большое значение</stringProp>
+      <stringProp name="TestPlan.comments"></stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
@@ -22,9 +22,19 @@
             <stringProp name="Argument.value">10082</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="UC01_Create_Org_paicing" elementType="Argument">
-            <stringProp name="Argument.name">UC01_Create_Org_paicing</stringProp>
-            <stringProp name="Argument.value">0.06662125341</stringProp>
+          <elementProp name="username" elementType="Argument">
+            <stringProp name="Argument.name">username</stringProp>
+            <stringProp name="Argument.value">UOchel</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="password" elementType="Argument">
+            <stringProp name="Argument.name">password</stringProp>
+            <stringProp name="Argument.value">123qweASD</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="sessionGUID" elementType="Argument">
+            <stringProp name="Argument.name">sessionGUID</stringProp>
+            <stringProp name="Argument.value">${__UUID}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="randomSmev" elementType="Argument">
@@ -57,36 +67,6 @@
             <stringProp name="Argument.value">1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="randomIntegration" elementType="Argument">
-            <stringProp name="Argument.name">randomIntegration</stringProp>
-            <stringProp name="Argument.value">500</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="constantIntegration" elementType="Argument">
-            <stringProp name="Argument.name">constantIntegration</stringProp>
-            <stringProp name="Argument.value">100</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="pacingIntegration" elementType="Argument">
-            <stringProp name="Argument.name">pacingIntegration</stringProp>
-            <stringProp name="Argument.value">1</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="username" elementType="Argument">
-            <stringProp name="Argument.name">username</stringProp>
-            <stringProp name="Argument.value">UOchel</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="password" elementType="Argument">
-            <stringProp name="Argument.name">password</stringProp>
-            <stringProp name="Argument.value">123qweASD</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="sessionGUID" elementType="Argument">
-            <stringProp name="Argument.name">sessionGUID</stringProp>
-            <stringProp name="Argument.value">${__UUID}</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="randomHouse" elementType="Argument">
             <stringProp name="Argument.name">randomHouse</stringProp>
             <stringProp name="Argument.value">3000</stringProp>
@@ -99,7 +79,7 @@
           </elementProp>
           <elementProp name="pacingHouse" elementType="Argument">
             <stringProp name="Argument.name">pacingHouse</stringProp>
-            <stringProp name="Argument.value">0.17</stringProp>
+            <stringProp name="Argument.value">0.2</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="randomAccount" elementType="Argument">
@@ -114,7 +94,7 @@
           </elementProp>
           <elementProp name="pacingAccount" elementType="Argument">
             <stringProp name="Argument.name">pacingAccount</stringProp>
-            <stringProp name="Argument.value">0.05</stringProp>
+            <stringProp name="Argument.value">0.1</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="randomLogin" elementType="Argument">
@@ -145,6 +125,11 @@
           <elementProp name="pacingSearch" elementType="Argument">
             <stringProp name="Argument.name">pacingSearch</stringProp>
             <stringProp name="Argument.value">0.2</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="UC01_Create_Org_paicing" elementType="Argument">
+            <stringProp name="Argument.name">UC01_Create_Org_paicing</stringProp>
+            <stringProp name="Argument.value">0.06662125341</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -192,54 +177,7 @@
         </collectionProp>
       </AuthManager>
       <hashTree/>
-      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-        <collectionProp name="HeaderManager.headers">
-          <elementProp name="Accept-Language" elementType="Header">
-            <stringProp name="Header.name">Accept-Language</stringProp>
-            <stringProp name="Header.value">ru</stringProp>
-          </elementProp>
-          <elementProp name="Accept-Encoding" elementType="Header">
-            <stringProp name="Header.name">Accept-Encoding</stringProp>
-            <stringProp name="Header.value">gzip, deflate, sdch</stringProp>
-          </elementProp>
-          <elementProp name="User-Agent" elementType="Header">
-            <stringProp name="Header.name">User-Agent</stringProp>
-            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36</stringProp>
-          </elementProp>
-          <elementProp name="Session-GUID" elementType="Header">
-            <stringProp name="Header.name">Session-GUID</stringProp>
-            <stringProp name="Header.value">${sessionGUID}</stringProp>
-          </elementProp>
-          <elementProp name="Accept" elementType="Header">
-            <stringProp name="Header.name">Accept</stringProp>
-            <stringProp name="Header.value">application/json; charset=utf-8</stringProp>
-          </elementProp>
-          <elementProp name="Cache-Control" elementType="Header">
-            <stringProp name="Header.name">Cache-Control</stringProp>
-            <stringProp name="Header.value">max-age=0</stringProp>
-          </elementProp>
-        </collectionProp>
-      </HeaderManager>
-      <hashTree/>
-      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
-        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-          <collectionProp name="Arguments.arguments"/>
-        </elementProp>
-        <stringProp name="HTTPSampler.domain"></stringProp>
-        <stringProp name="HTTPSampler.port"></stringProp>
-        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-        <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        <stringProp name="HTTPSampler.protocol"></stringProp>
-        <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-        <stringProp name="HTTPSampler.path"></stringProp>
-        <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
-        <boolProp name="HTTPSampler.image_parser">true</boolProp>
-        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
-        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
-        <stringProp name="HTTPSampler.embedded_url_re">^.*gosuslugi.ru.*$</stringProp>
-      </ConfigTestElement>
-      <hashTree/>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC00 init" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC00 init" enabled="false"/>
       <hashTree>
         <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
           <boolProp name="autocommit">true</boolProp>
@@ -259,7 +197,7 @@
         <hashTree/>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="__JDBC Request" enabled="true">
           <stringProp name="dataSource">fiasdb</stringProp>
-          <stringProp name="query">select distinct z.houseguid fias from nsism.nsi_house z inner join nsism.nsi_addrobj x using(aoguid) inner join nsism.nsi_oktmo c on z.oktmo_uid = c.guid where z.houseguid not in(select hg from public.dblink(&apos;hostaddr=172.16.202.8 port=5454 dbname=hcsagrdb user=postgres password=postgres&apos;,&apos;select fias_house_code from agrsm.agr_managed_objects&apos;) 	as houses(hg char(36))) and z.houseguid not in(select hg from public.dblink(&apos;hostaddr=172.16.202.8 port=5454 dbname=hcshmdb user=postgres password=postgres&apos;,&apos;select houseguid from hmsm.house&apos;) as houses(hg char(36))) and z.is_actual = true and x.regioncode = &apos;74&apos; and x.aolevel = &apos;7&apos; and x.is_actual = true and c.has_children = false and c.is_actual = true;</stringProp>
+          <stringProp name="query">with hm as (select hg from public.dblink (&apos;hostaddr=172.16.202.8 port=5454 dbname=hcshmdb user=postgres password=postgres&apos;,&apos;select houseguid from hmsm.house&apos;) as houses (hg char(36))), agr as (select hg from public.dblink (&apos;hostaddr=172.16.202.8 port=5454 dbname=hcsagrdb user=postgres password=postgres&apos;,&apos;select fias_house_code from agrsm.agr_managed_objects&apos;) as houses (hg char(36))), nsi as (select distinct z.houseguid hg from nsism.nsi_house z inner join nsism.nsi_addrobj x using (aoguid) inner join nsism.nsi_oktmo c on z.oktmo_uid=c.guid where x.regioncode=&apos;74&apos; and x.aolevel=&apos;7&apos; and x.is_actual=true and z.is_actual=true and c.has_children=false and c.is_actual=true) select hg fias from nsi where hg not in (select hg from hm) and hg not in (select hg from agr);</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -289,7 +227,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           <hashTree/>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC01 createOrg" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC01 createOrg" enabled="false"/>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
           <stringProp name="filename">data_pool/UC01_Create_Org.csv</stringProp>
@@ -302,12 +240,12 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           <stringProp name="shareMode">shareMode.group</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="IC UC01 createOrg" enabled="false">
-          <stringProp name="IncludeController.includepath"></stringProp>
+        <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="IC UC01 createOrg" enabled="true">
+          <stringProp name="IncludeController.includepath">MC01.jmx</stringProp>
         </IncludeController>
         <hashTree/>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC02 smev" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC02 smev" enabled="false"/>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
           <stringProp name="delimiter">,</stringProp>
@@ -324,7 +262,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -385,13 +323,13 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC03 paymentDocument" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC03 paymentDocument" enabled="false"/>
       <hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC03.paymentDocument" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -651,110 +589,13 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC04 meteringDeviceValue" enabled="true"/>
-      <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC04.meteringDeviceValues" enabled="true">
-          <boolProp name="TransactionController.parent">false</boolProp>
-        </TransactionController>
-        <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
-            <intProp name="ActionProcessor.action">1</intProp>
-            <intProp name="ActionProcessor.target">0</intProp>
-            <stringProp name="ActionProcessor.duration">0</stringProp>
-          </TestAction>
-          <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
-              <stringProp name="ConstantTimer.delay">${constantIntegration}</stringProp>
-              <stringProp name="RandomTimer.range">${randomIntegration}</stringProp>
-            </UniformRandomTimer>
-            <hashTree/>
-          </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04.meteringDeviceValues.import" enabled="true">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:base=&quot;http://dom.gosuslugi.ru/schema/integration/base/&quot; xmlns:dev=&quot;http://dom.gosuslugi.ru/schema/integration/device-metering/&quot; xmlns:xd=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:met=&quot;http://dom.gosuslugi.ru/schema/integration/metering-device-base/&quot; xmlns:nsi=&quot;http://dom.gosuslugi.ru/schema/integration/nsi-base/&quot;&gt;&#xd;
-	&lt;soapenv:Header&gt;&#xd;
-		&lt;base:RequestHeader&gt;&#xd;
-			&lt;base:Date&gt;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.SXXX)}&lt;/base:Date&gt;&#xd;
-			&lt;base:MessageGUID&gt;${__UUID}&lt;/base:MessageGUID&gt;&#xd;
-			&lt;base:orgPPAGUID&gt;5bc377ea-1f6f-4473-8af8-e5b130290b3e&lt;/base:orgPPAGUID&gt;&#xd;
-		&lt;/base:RequestHeader&gt;&#xd;
-	&lt;/soapenv:Header&gt;&#xd;
-	&lt;soapenv:Body&gt;&#xd;
-		&lt;dev:importMeteringDeviceValuesRequest base:version=&quot;10.0.1.1&quot;&gt;&#xd;
-			&lt;dev:FIASHouseGuid&gt;a17a7644-40cc-4a25-afdb-4a4da935f370&lt;/dev:FIASHouseGuid&gt;&#xd;
-			&lt;dev:MeteringDevicesValues&gt;&#xd;
-				&lt;dev:MeteringDeviceRootGUID&gt;1d197ba7-fb90-4f7e-96d2-3d1a7c2f156f&lt;/dev:MeteringDeviceRootGUID&gt;&#xd;
-				&lt;!--            &lt;dev:MeteringDeviceVersionGUID&gt;?&lt;/dev:MeteringDeviceVersionGUID&gt;--&gt;&#xd;
-				&lt;dev:ElectricDeviceValue&gt;&#xd;
-					&lt;dev:CurrentValue&gt;&#xd;
-						&lt;met:MeteringValueT1&gt;50.0000&lt;/met:MeteringValueT1&gt;&#xd;
-						&lt;met:MeteringValueT2&gt;55.0000&lt;/met:MeteringValueT2&gt;&#xd;
-						&lt;met:MeteringValueT3&gt;60.0000&lt;/met:MeteringValueT3&gt;&#xd;
-						&lt;met:ReadingsSource&gt;soap&lt;/met:ReadingsSource&gt;&#xd;
-						&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
-					&lt;/dev:CurrentValue&gt;&#xd;
-				&lt;/dev:ElectricDeviceValue&gt;&#xd;
-			&lt;/dev:MeteringDevicesValues&gt;&#xd;
-		&lt;/dev:importMeteringDeviceValuesRequest&gt;&#xd;
-	&lt;/soapenv:Body&gt;&#xd;
-&lt;/soapenv:Envelope&gt;</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">${host}</stringProp>
-            <stringProp name="HTTPSampler.port">${port}</stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
-            <stringProp name="HTTPSampler.path">/ext-bus-device-metering-service/services/DeviceMetering</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
-            <boolProp name="HTTPSampler.monitor">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="SOAPAction" elementType="Header">
-                  <stringProp name="Header.name">SOAPAction</stringProp>
-                  <stringProp name="Header.value"> &quot;urn:importMeteringDeviceValues&quot;</stringProp>
-                </elementProp>
-                <elementProp name="X-Client-Cert-Fingerprint" elementType="Header">
-                  <stringProp name="Header.name">X-Client-Cert-Fingerprint</stringProp>
-                  <stringProp name="Header.value">40ba17ff5335ceade18262cc583dd8c78851fbde</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="1697049655">UpdateDate</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">true</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-      </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC05 account" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC05 account" enabled="false"/>
       <hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC05.account" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -895,13 +736,13 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC06 houseuo" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC06 houseuo" enabled="false"/>
       <hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC06.houseuo" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -1111,7 +952,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC07 contract" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC07 contract" enabled="false"/>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
           <stringProp name="delimiter">,</stringProp>
@@ -1128,7 +969,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -1341,7 +1182,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="-363682351">ContractStatus&gt;Approved</stringProp>
+                <stringProp name="-1238426949">ContractGUID</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">true</boolProp>
@@ -1351,13 +1192,110 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC08 supplyResourceContract" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC04 meteringDeviceValue" enabled="false"/>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC04.meteringDeviceValues" enabled="true">
+          <boolProp name="TransactionController.parent">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">0</stringProp>
+          </TestAction>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${constantIntegration}</stringProp>
+              <stringProp name="RandomTimer.range">${randomIntegration}</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC04.meteringDeviceValues.import" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:base=&quot;http://dom.gosuslugi.ru/schema/integration/base/&quot; xmlns:dev=&quot;http://dom.gosuslugi.ru/schema/integration/device-metering/&quot; xmlns:xd=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:met=&quot;http://dom.gosuslugi.ru/schema/integration/metering-device-base/&quot; xmlns:nsi=&quot;http://dom.gosuslugi.ru/schema/integration/nsi-base/&quot;&gt;&#xd;
+	&lt;soapenv:Header&gt;&#xd;
+		&lt;base:RequestHeader&gt;&#xd;
+			&lt;base:Date&gt;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.SXXX)}&lt;/base:Date&gt;&#xd;
+			&lt;base:MessageGUID&gt;${__UUID}&lt;/base:MessageGUID&gt;&#xd;
+			&lt;base:orgPPAGUID&gt;5bc377ea-1f6f-4473-8af8-e5b130290b3e&lt;/base:orgPPAGUID&gt;&#xd;
+		&lt;/base:RequestHeader&gt;&#xd;
+	&lt;/soapenv:Header&gt;&#xd;
+	&lt;soapenv:Body&gt;&#xd;
+		&lt;dev:importMeteringDeviceValuesRequest base:version=&quot;10.0.1.1&quot;&gt;&#xd;
+			&lt;dev:FIASHouseGuid&gt;a17a7644-40cc-4a25-afdb-4a4da935f370&lt;/dev:FIASHouseGuid&gt;&#xd;
+			&lt;dev:MeteringDevicesValues&gt;&#xd;
+				&lt;dev:MeteringDeviceRootGUID&gt;1d197ba7-fb90-4f7e-96d2-3d1a7c2f156f&lt;/dev:MeteringDeviceRootGUID&gt;&#xd;
+				&lt;!--            &lt;dev:MeteringDeviceVersionGUID&gt;?&lt;/dev:MeteringDeviceVersionGUID&gt;--&gt;&#xd;
+				&lt;dev:ElectricDeviceValue&gt;&#xd;
+					&lt;dev:CurrentValue&gt;&#xd;
+						&lt;met:MeteringValueT1&gt;50.0000&lt;/met:MeteringValueT1&gt;&#xd;
+						&lt;met:MeteringValueT2&gt;55.0000&lt;/met:MeteringValueT2&gt;&#xd;
+						&lt;met:MeteringValueT3&gt;60.0000&lt;/met:MeteringValueT3&gt;&#xd;
+						&lt;met:ReadingsSource&gt;soap&lt;/met:ReadingsSource&gt;&#xd;
+						&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
+					&lt;/dev:CurrentValue&gt;&#xd;
+				&lt;/dev:ElectricDeviceValue&gt;&#xd;
+			&lt;/dev:MeteringDevicesValues&gt;&#xd;
+		&lt;/dev:importMeteringDeviceValuesRequest&gt;&#xd;
+	&lt;/soapenv:Body&gt;&#xd;
+&lt;/soapenv:Envelope&gt;</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/ext-bus-device-metering-service/services/DeviceMetering</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="SOAPAction" elementType="Header">
+                  <stringProp name="Header.name">SOAPAction</stringProp>
+                  <stringProp name="Header.value"> &quot;urn:importMeteringDeviceValues&quot;</stringProp>
+                </elementProp>
+                <elementProp name="X-Client-Cert-Fingerprint" elementType="Header">
+                  <stringProp name="Header.name">X-Client-Cert-Fingerprint</stringProp>
+                  <stringProp name="Header.value">40ba17ff5335ceade18262cc583dd8c78851fbde</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1697049655">UpdateDate</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">true</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC08 supplyResourceContract" enabled="false"/>
       <hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC08.supplyResourceContract" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -1506,13 +1444,13 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC09 meteringDeviceData" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC09 meteringDeviceData" enabled="false"/>
       <hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC09.meteringDeviceData" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -1614,7 +1552,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
               <collectionProp name="Asserion.test_strings">
-                <stringProp name="286377626">UniqueNumber</stringProp>
+                <stringProp name="1697049655">UpdateDate</stringProp>
               </collectionProp>
               <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
               <boolProp name="Assertion.assume_success">false</boolProp>
@@ -1624,7 +1562,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC10 houseuo" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC10 houseuo" enabled="false"/>
       <hashTree>
         <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
           <boolProp name="clearEachIteration">true</boolProp>
@@ -1638,11 +1576,58 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
           <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
         </CookieManager>
         <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="Accept-Language" elementType="Header">
+              <stringProp name="Header.name">Accept-Language</stringProp>
+              <stringProp name="Header.value">ru</stringProp>
+            </elementProp>
+            <elementProp name="Accept-Encoding" elementType="Header">
+              <stringProp name="Header.name">Accept-Encoding</stringProp>
+              <stringProp name="Header.value">gzip, deflate, sdch</stringProp>
+            </elementProp>
+            <elementProp name="User-Agent" elementType="Header">
+              <stringProp name="Header.name">User-Agent</stringProp>
+              <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36</stringProp>
+            </elementProp>
+            <elementProp name="Session-GUID" elementType="Header">
+              <stringProp name="Header.name">Session-GUID</stringProp>
+              <stringProp name="Header.value">${sessionGUID}</stringProp>
+            </elementProp>
+            <elementProp name="Accept" elementType="Header">
+              <stringProp name="Header.name">Accept</stringProp>
+              <stringProp name="Header.value">application/json; charset=utf-8</stringProp>
+            </elementProp>
+            <elementProp name="Cache-Control" elementType="Header">
+              <stringProp name="Header.name">Cache-Control</stringProp>
+              <stringProp name="Header.value">max-age=0</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.embedded_url_re">^.*gosuslugi.ru.*$</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC10.House" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="false">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -1654,7 +1639,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="main" enabled="false"/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="main" enabled="true"/>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/main/" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -2645,7 +2630,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="false">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -2680,16 +2665,6 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
               <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="-1924169434">(https?)://(.+?):(\d+)(/.+?)\?SAMLRequest=(.+?)&amp;RelayState=(.+?)&amp;SigAlg=(.+?)&amp;Signature=(.+?)&quot;</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">true</boolProp>
-                <intProp name="Assertion.test_type">2</intProp>
-                <stringProp name="Scope.variable">z</stringProp>
-              </ResponseAssertion>
-              <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">z</stringProp>
@@ -2699,6 +2674,16 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
                 <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
               </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1924169434">(https?)://(.+?):(\d+)(/.+?)\?SAMLRequest=(.+?)&amp;RelayState=(.+?)&amp;SigAlg=(.+?)&amp;Signature=(.+?)&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+                <stringProp name="Scope.variable">z</stringProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/login/SSO" enabled="true">
@@ -2796,16 +2781,6 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
               <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="658112783">RelayState.+?=&quot;(.+?)&quot;[\s\S]+SAMLResponse.+?=&quot;(.+?)&quot;</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">true</boolProp>
-                <intProp name="Assertion.test_type">2</intProp>
-                <stringProp name="Scope.variable">z</stringProp>
-              </ResponseAssertion>
-              <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">z</stringProp>
@@ -2815,6 +2790,16 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
                 <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
               </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="658112783">RelayState.+?=&quot;(.+?)&quot;[\s\S]+SAMLResponse.+?=&quot;(.+?)&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+                <stringProp name="Scope.variable">z</stringProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/login/SAMLAssertionConsumer" enabled="true">
@@ -2870,15 +2855,6 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="701093600">(https?)://(.+?)(:?\d{0,5})?(/.+noGost.jsp)</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">2</intProp>
-              </ResponseAssertion>
-              <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">unescaped</stringProp>
                 <stringProp name="RegexExtractor.refname">z</stringProp>
@@ -2888,6 +2864,15 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
                 <stringProp name="Sample.scope">children</stringProp>
               </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="701093600">(https?)://(.+?)(:?\d{0,5})?(/.+noGost.jsp)</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/login/noGOST.jsp" enabled="true">
@@ -2984,7 +2969,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="false">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -2996,7 +2981,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="organization start-decision" enabled="false"/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="organization start-decision" enabled="true"/>
           <hashTree>
             <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
               <collectionProp name="HeaderManager.headers">
@@ -3729,7 +3714,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="false">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -3741,7 +3726,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="house list" enabled="false"/>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="house list" enabled="true"/>
           <hashTree>
             <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
               <collectionProp name="HeaderManager.headers">
@@ -4261,7 +4246,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="false">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -4426,15 +4411,6 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="-1413197865">aoGuid</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">16</intProp>
-              </ResponseAssertion>
-              <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">regionCode</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.*.aoGuid</stringProp>
@@ -4452,6 +4428,15 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data_pool&quot;).mkdir()
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.*.regionCode</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
               </JSONPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1413197865">aoGuid</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/choose-address/est-statuses" enabled="true">
@@ -7296,16 +7281,6 @@ vars.put(&quot;aoGuid&quot;,aoGuid);
                 <stringProp name="scriptLanguage">groovy</stringProp>
               </JSR223PreProcessor>
               <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="1033322953">houseGuid</stringProp>
-                  <stringProp name="105813434">oktmo</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">16</intProp>
-              </ResponseAssertion>
-              <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">houseCode</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.*.houseGuid</stringProp>
@@ -7341,6 +7316,16 @@ vars.put(&quot;aoGuid&quot;,aoGuid);
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.*.oktmo.actual</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
               </JSONPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1033322953">houseGuid</stringProp>
+                  <stringProp name="105813434">oktmo</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/choose-address/validate-to-create" enabled="true">
@@ -7406,7 +7391,7 @@ vars.put(&quot;aoGuid&quot;,aoGuid);
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="false">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -7558,15 +7543,6 @@ vars.put(&quot;sn&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+v
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="-1364738085">olsonTZ</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">16</intProp>
-              </ResponseAssertion>
-              <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">olsonGUID</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.managementOrganization.olsonTZ.guid</stringProp>
@@ -7578,6 +7554,15 @@ vars.put(&quot;sn&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+v
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.houseManagementType.guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
               </JSONPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1364738085">olsonTZ</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-request/conditions" enabled="true">
@@ -7610,6 +7595,12 @@ vars.put(&quot;sn&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+v
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
+              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                <stringProp name="JSONPostProcessor.referenceNames">conditionGUID</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.*.guid</stringProp>
+                <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              </JSONPostProcessor>
+              <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                 <collectionProp name="Asserion.test_strings">
                   <stringProp name="3184265">guid</stringProp>
@@ -7618,12 +7609,6 @@ vars.put(&quot;sn&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+v
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
-              <hashTree/>
-              <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
-                <stringProp name="JSONPostProcessor.referenceNames">conditionGUID</stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs">$.*.guid</stringProp>
-                <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
-              </JSONPostProcessor>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-request/types" enabled="true">
@@ -7883,7 +7868,7 @@ vars.put(&quot;sn&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+v
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">paramGUID</stringProp>
-                <stringProp name="JSONPostProcessor.jsonPathExprs">$.params.items[0].guid</stringProp>
+                <stringProp name="JSONPostProcessor.jsonPathExprs">$.params.items[&quot;0&quot;].guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
               </JSONPostProcessor>
               <hashTree/>
@@ -7894,8 +7879,7 @@ vars.put(&quot;sn&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+v
                 <collectionProp name="Arguments.arguments">
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.value">{&quot;raoRef&quot;:{},&quot;type&quot;:&quot;COMMON_ATTRIBUTE_DESCRIPTION&quot;,&quot;applicability&quot;:&quot;APARTMENT_HOUSE&quot;,&quot;name&quot;:null,&quot;parentRef&quot;:{&quot;guid&quot;:&quot;${paramGUID}&quot;}}&#xd;
-</stringProp>
+                    <stringProp name="Argument.value">{&quot;raoRef&quot;:{},&quot;type&quot;:&quot;COMMON_ATTRIBUTE_DESCRIPTION&quot;,&quot;applicability&quot;:&quot;APARTMENT_HOUSE&quot;,&quot;name&quot;:null,&quot;parentRef&quot;:{&quot;guid&quot;:${paramGUID}}</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                   </elementProp>
                 </collectionProp>
@@ -8010,7 +7994,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC11 account" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC11 account" enabled="false"/>
       <hashTree>
         <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
           <stringProp name="CounterConfig.start">1</stringProp>
@@ -8033,11 +8017,58 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
           <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
         </CookieManager>
         <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="Accept-Language" elementType="Header">
+              <stringProp name="Header.name">Accept-Language</stringProp>
+              <stringProp name="Header.value">ru</stringProp>
+            </elementProp>
+            <elementProp name="Accept-Encoding" elementType="Header">
+              <stringProp name="Header.name">Accept-Encoding</stringProp>
+              <stringProp name="Header.value">gzip, deflate, sdch</stringProp>
+            </elementProp>
+            <elementProp name="User-Agent" elementType="Header">
+              <stringProp name="Header.name">User-Agent</stringProp>
+              <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36</stringProp>
+            </elementProp>
+            <elementProp name="Session-GUID" elementType="Header">
+              <stringProp name="Header.name">Session-GUID</stringProp>
+              <stringProp name="Header.value">${sessionGUID}</stringProp>
+            </elementProp>
+            <elementProp name="Accept" elementType="Header">
+              <stringProp name="Header.name">Accept</stringProp>
+              <stringProp name="Header.value">application/json; charset=utf-8</stringProp>
+            </elementProp>
+            <elementProp name="Cache-Control" elementType="Header">
+              <stringProp name="Header.name">Cache-Control</stringProp>
+              <stringProp name="Header.value">max-age=0</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.embedded_url_re">^.*gosuslugi.ru.*$</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC11.Accounts" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -9040,7 +9071,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -9075,16 +9106,6 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="-1924169434">(https?)://(.+?):(\d+)(/.+?)\?SAMLRequest=(.+?)&amp;RelayState=(.+?)&amp;SigAlg=(.+?)&amp;Signature=(.+?)&quot;</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">true</boolProp>
-                <intProp name="Assertion.test_type">2</intProp>
-                <stringProp name="Scope.variable">z</stringProp>
-              </ResponseAssertion>
-              <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">z</stringProp>
@@ -9094,6 +9115,16 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
                 <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
               </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1924169434">(https?)://(.+?):(\d+)(/.+?)\?SAMLRequest=(.+?)&amp;RelayState=(.+?)&amp;SigAlg=(.+?)&amp;Signature=(.+?)&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+                <stringProp name="Scope.variable">z</stringProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC11/login/SSO" enabled="true">
@@ -9191,16 +9222,6 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="658112783">RelayState.+?=&quot;(.+?)&quot;[\s\S]+SAMLResponse.+?=&quot;(.+?)&quot;</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">true</boolProp>
-                <intProp name="Assertion.test_type">2</intProp>
-                <stringProp name="Scope.variable">z</stringProp>
-              </ResponseAssertion>
-              <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">z</stringProp>
@@ -9210,6 +9231,16 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
                 <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
               </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="658112783">RelayState.+?=&quot;(.+?)&quot;[\s\S]+SAMLResponse.+?=&quot;(.+?)&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+                <stringProp name="Scope.variable">z</stringProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC11/login/SAMLAssertionConsumer" enabled="true">
@@ -9265,15 +9296,6 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="701093600">(https?)://(.+?)(:?\d{0,5})?(/.+noGost.jsp)</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">2</intProp>
-              </ResponseAssertion>
-              <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">unescaped</stringProp>
                 <stringProp name="RegexExtractor.refname">z</stringProp>
@@ -9283,6 +9305,15 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
                 <stringProp name="Sample.scope">children</stringProp>
               </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="701093600">(https?)://(.+?)(:?\d{0,5})?(/.+noGost.jsp)</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC11/login/noGOST.jsp" enabled="true">
@@ -9379,7 +9410,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -10124,7 +10155,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -10656,7 +10687,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -10931,7 +10962,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -11174,15 +11205,6 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="100526016">items</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">16</intProp>
-              </ResponseAssertion>
-              <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">hguid</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.items[0].guid</stringProp>
@@ -11204,15 +11226,14 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 <stringProp name="JSONPostProcessor.defaultValues">${__UUID}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
-              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="false">
-                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-                <stringProp name="RegexExtractor.refname">hguid</stringProp>
-                <stringProp name="RegexExtractor.regex">&quot;(.{36})&quot;,&quot;rootGuid&quot;.+?&quot;houseGuid&quot;:&quot;(.{36})&quot;.+?&quot;managementOrganizationGuid&quot;:&quot;(.{36})&quot;</stringProp>
-                <stringProp name="RegexExtractor.template"></stringProp>
-                <stringProp name="RegexExtractor.default"></stringProp>
-                <stringProp name="RegexExtractor.match_number">1</stringProp>
-                <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
-              </RegexExtractor>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="100526016">items</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC11/account-create/search" enabled="true">
@@ -11260,15 +11281,6 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="2071860825">versionInfoDTO</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">16</intProp>
-              </ResponseAssertion>
-              <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">dguid</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">[0].guid</stringProp>
@@ -11282,6 +11294,15 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
                 <stringProp name="JSONPostProcessor.defaultValues">${__UUID}</stringProp>
               </JSONPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="2071860825">versionInfoDTO</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC11/account-create/regions" enabled="true">
@@ -11450,7 +11471,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC12 login" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC12 login" enabled="false"/>
       <hashTree>
         <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
           <boolProp name="clearEachIteration">true</boolProp>
@@ -11464,11 +11485,58 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
           <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
         </CookieManager>
         <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="Accept-Language" elementType="Header">
+              <stringProp name="Header.name">Accept-Language</stringProp>
+              <stringProp name="Header.value">ru</stringProp>
+            </elementProp>
+            <elementProp name="Accept-Encoding" elementType="Header">
+              <stringProp name="Header.name">Accept-Encoding</stringProp>
+              <stringProp name="Header.value">gzip, deflate, sdch</stringProp>
+            </elementProp>
+            <elementProp name="User-Agent" elementType="Header">
+              <stringProp name="Header.name">User-Agent</stringProp>
+              <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36</stringProp>
+            </elementProp>
+            <elementProp name="Session-GUID" elementType="Header">
+              <stringProp name="Header.name">Session-GUID</stringProp>
+              <stringProp name="Header.value">${sessionGUID}</stringProp>
+            </elementProp>
+            <elementProp name="Accept" elementType="Header">
+              <stringProp name="Header.name">Accept</stringProp>
+              <stringProp name="Header.value">application/json; charset=utf-8</stringProp>
+            </elementProp>
+            <elementProp name="Cache-Control" elementType="Header">
+              <stringProp name="Header.name">Cache-Control</stringProp>
+              <stringProp name="Header.value">max-age=0</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.embedded_url_re">^.*gosuslugi.ru.*$</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC12.Login" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -12471,7 +12539,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -12506,16 +12574,6 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="-1924169434">(https?)://(.+?):(\d+)(/.+?)\?SAMLRequest=(.+?)&amp;RelayState=(.+?)&amp;SigAlg=(.+?)&amp;Signature=(.+?)&quot;</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">true</boolProp>
-                <intProp name="Assertion.test_type">2</intProp>
-                <stringProp name="Scope.variable">z</stringProp>
-              </ResponseAssertion>
-              <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">z</stringProp>
@@ -12525,6 +12583,16 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
                 <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
               </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1924169434">(https?)://(.+?):(\d+)(/.+?)\?SAMLRequest=(.+?)&amp;RelayState=(.+?)&amp;SigAlg=(.+?)&amp;Signature=(.+?)&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+                <stringProp name="Scope.variable">z</stringProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC12/login/SSO" enabled="true">
@@ -12622,16 +12690,6 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
             </HTTPSamplerProxy>
             <hashTree>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="658112783">RelayState.+?=&quot;(.+?)&quot;[\s\S]+SAMLResponse.+?=&quot;(.+?)&quot;</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">true</boolProp>
-                <intProp name="Assertion.test_type">2</intProp>
-                <stringProp name="Scope.variable">z</stringProp>
-              </ResponseAssertion>
-              <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                 <stringProp name="RegexExtractor.refname">z</stringProp>
@@ -12641,6 +12699,16 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
                 <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
               </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="658112783">RelayState.+?=&quot;(.+?)&quot;[\s\S]+SAMLResponse.+?=&quot;(.+?)&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+                <stringProp name="Scope.variable">z</stringProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC12/login/SAMLAssertionConsumer" enabled="true">
@@ -12696,15 +12764,6 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 </collectionProp>
               </HeaderManager>
               <hashTree/>
-              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-                <collectionProp name="Asserion.test_strings">
-                  <stringProp name="701093600">(https?)://(.+?)(:?\d{0,5})?(/.+noGost.jsp)</stringProp>
-                </collectionProp>
-                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-                <boolProp name="Assertion.assume_success">false</boolProp>
-                <intProp name="Assertion.test_type">2</intProp>
-              </ResponseAssertion>
-              <hashTree/>
               <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                 <stringProp name="RegexExtractor.useHeaders">unescaped</stringProp>
                 <stringProp name="RegexExtractor.refname">z</stringProp>
@@ -12714,6 +12773,15 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
                 <stringProp name="RegexExtractor.match_number">1</stringProp>
                 <stringProp name="Sample.scope">children</stringProp>
               </RegexExtractor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="701093600">(https?)://(.+?)(:?\d{0,5})?(/.+noGost.jsp)</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC12/login/noGOST.jsp" enabled="true">
@@ -12810,7 +12878,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -13555,7 +13623,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -14089,7 +14157,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC13 search" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC13 search" enabled="false"/>
       <hashTree>
         <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
           <boolProp name="clearEachIteration">true</boolProp>
@@ -14103,11 +14171,58 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
           <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
         </CookieManager>
         <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="Accept-Language" elementType="Header">
+              <stringProp name="Header.name">Accept-Language</stringProp>
+              <stringProp name="Header.value">ru</stringProp>
+            </elementProp>
+            <elementProp name="Accept-Encoding" elementType="Header">
+              <stringProp name="Header.name">Accept-Encoding</stringProp>
+              <stringProp name="Header.value">gzip, deflate, sdch</stringProp>
+            </elementProp>
+            <elementProp name="User-Agent" elementType="Header">
+              <stringProp name="Header.name">User-Agent</stringProp>
+              <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36</stringProp>
+            </elementProp>
+            <elementProp name="Session-GUID" elementType="Header">
+              <stringProp name="Header.name">Session-GUID</stringProp>
+              <stringProp name="Header.value">${sessionGUID}</stringProp>
+            </elementProp>
+            <elementProp name="Accept" elementType="Header">
+              <stringProp name="Header.name">Accept</stringProp>
+              <stringProp name="Header.value">application/json; charset=utf-8</stringProp>
+            </elementProp>
+            <elementProp name="Cache-Control" elementType="Header">
+              <stringProp name="Header.name">Cache-Control</stringProp>
+              <stringProp name="Header.value">max-age=0</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <boolProp name="HTTPSampler.image_parser">true</boolProp>
+          <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.embedded_url_re">^.*gosuslugi.ru.*$</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC13.Search" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -15110,7 +15225,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
               <hashTree/>
             </hashTree>
           </hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.think.time" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -15610,19 +15725,19 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UTG CreateOrg" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-301145445">
+          <collectionProp name="-1293148051">
             <stringProp name="1">1</stringProp>
             <stringProp name="2">0</stringProp>
             <stringProp name="3">1</stringProp>
-            <stringProp name="4">14398</stringProp>
+            <stringProp name="47899024">28798</stringProp>
             <stringProp name="5">1</stringProp>
           </collectionProp>
-          <collectionProp name="1781515456">
-            <stringProp name="1">8</stringProp>
+          <collectionProp name="355629386">
+            <stringProp name="55">7</stringProp>
             <stringProp name="2">0</stringProp>
-            <stringProp name="3">14400</stringProp>
-            <stringProp name="4">14400</stringProp>
-            <stringProp name="5">1</stringProp>
+            <stringProp name="46795509">12600</stringProp>
+            <stringProp name="46910147">16190</stringProp>
+            <stringProp name="1567">10</stringProp>
           </collectionProp>
         </collectionProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -15640,7 +15755,7 @@ vars.put(&quot;sn3&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quot;+
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JL CreateOrg" enabled="true">
+        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener" enabled="true">
           <stringProp name="cacheKey">f8a134ae-2d12-4372-8ea8-456b96ca34c0</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -15670,19 +15785,19 @@ vars.put(&quot;cntCreateOrg&quot;,i);
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UTG Smev" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-301145445">
+          <collectionProp name="-1293148051">
             <stringProp name="1">1</stringProp>
             <stringProp name="2">0</stringProp>
             <stringProp name="3">1</stringProp>
-            <stringProp name="4">14398</stringProp>
+            <stringProp name="47899024">28798</stringProp>
             <stringProp name="5">1</stringProp>
           </collectionProp>
-          <collectionProp name="-32944442">
-            <stringProp name="55476">840</stringProp>
+          <collectionProp name="-873616996">
+            <stringProp name="55454">839</stringProp>
             <stringProp name="2">0</stringProp>
-            <stringProp name="3">14400</stringProp>
-            <stringProp name="4">14400</stringProp>
-            <stringProp name="5">1</stringProp>
+            <stringProp name="46852459">14383</stringProp>
+            <stringProp name="46824377">13517</stringProp>
+            <stringProp name="56313">900</stringProp>
           </collectionProp>
         </collectionProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -15692,7 +15807,7 @@ vars.put(&quot;cntCreateOrg&quot;,i);
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
       </kg.apc.jmeter.threads.UltimateThreadGroup>
       <hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.pacing.time" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA pacing" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -15712,7 +15827,7 @@ vars.put(&quot;cntCreateOrg&quot;,i);
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JL Smev" enabled="true">
+        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener" enabled="true">
           <stringProp name="cacheKey">f8a134ae-2d12-4372-8ea8-456b96ca34c0</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -15742,19 +15857,19 @@ vars.put(&quot;cntSmev&quot;,i);
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UTG Integration" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-301145445">
+          <collectionProp name="-1293148051">
             <stringProp name="1">1</stringProp>
             <stringProp name="2">0</stringProp>
             <stringProp name="3">1</stringProp>
-            <stringProp name="4">14398</stringProp>
+            <stringProp name="47899024">28798</stringProp>
             <stringProp name="5">1</stringProp>
           </collectionProp>
-          <collectionProp name="-1328792137">
-            <stringProp name="48687">120</stringProp>
+          <collectionProp name="-230689546">
+            <stringProp name="49688">239</stringProp>
             <stringProp name="2">0</stringProp>
-            <stringProp name="3">14400</stringProp>
-            <stringProp name="4">14400</stringProp>
-            <stringProp name="5">1</stringProp>
+            <stringProp name="46852332">14340</stringProp>
+            <stringProp name="46851309">14220</stringProp>
+            <stringProp name="49710">240</stringProp>
           </collectionProp>
         </collectionProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -15764,7 +15879,7 @@ vars.put(&quot;cntSmev&quot;,i);
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
       </kg.apc.jmeter.threads.UltimateThreadGroup>
       <hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.pacing.time" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA pacing" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -15808,6 +15923,14 @@ vars.put(&quot;cntSmev&quot;,i);
           </collectionProp>
         </ModuleController>
         <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC UC04 meteringDeviceValue" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-1746072286">TF UC04 meteringDeviceValue</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
         <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC UC08 supplyResourceContract" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
@@ -15824,15 +15947,7 @@ vars.put(&quot;cntSmev&quot;,i);
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC UC04 meteringDeviceValue" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="-1227702913">WorkBench</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-1746072286">TF UC04 meteringDeviceValue</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JL Integration" enabled="true">
+        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener" enabled="true">
           <stringProp name="cacheKey">f8a134ae-2d12-4372-8ea8-456b96ca34c0</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -15862,19 +15977,19 @@ vars.put(&quot;cntIntegration&quot;,i);
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UTG HouseUO" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-301145445">
+          <collectionProp name="-1293148051">
             <stringProp name="1">1</stringProp>
             <stringProp name="2">0</stringProp>
             <stringProp name="3">1</stringProp>
-            <stringProp name="4">14398</stringProp>
+            <stringProp name="47899024">28798</stringProp>
             <stringProp name="5">1</stringProp>
           </collectionProp>
-          <collectionProp name="232228128">
-            <stringProp name="1753">70</stringProp>
+          <collectionProp name="-1871346557">
+            <stringProp name="1698">57</stringProp>
             <stringProp name="2">0</stringProp>
-            <stringProp name="3">14400</stringProp>
-            <stringProp name="4">14400</stringProp>
-            <stringProp name="5">1</stringProp>
+            <stringProp name="46850443">14152</stringProp>
+            <stringProp name="46854386">14588</stringProp>
+            <stringProp name="1722">60</stringProp>
           </collectionProp>
         </collectionProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -15884,7 +15999,7 @@ vars.put(&quot;cntIntegration&quot;,i);
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
       </kg.apc.jmeter.threads.UltimateThreadGroup>
       <hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.pacing.time" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA pacing" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -15904,7 +16019,7 @@ vars.put(&quot;cntIntegration&quot;,i);
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JL HouseUO" enabled="true">
+        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener" enabled="true">
           <stringProp name="cacheKey">f8a134ae-2d12-4372-8ea8-456b96ca34c0</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -15932,24 +16047,31 @@ vars.put(&quot;cntHouseUO&quot;,i);
         </JSR223Listener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="STG Account" enabled="true">
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">660</stringProp>
-        <stringProp name="Threads initial delay">0</stringProp>
-        <stringProp name="Start users count">60</stringProp>
-        <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">600</stringProp>
-        <stringProp name="Stop users count">2</stringProp>
-        <stringProp name="Stop users period">1</stringProp>
-        <stringProp name="flighttime">1171</stringProp>
-        <stringProp name="rampUp">300</stringProp>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UTG Account" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="-1716487675">
+            <stringProp name="49">1</stringProp>
+            <stringProp name="0">0</stringProp>
+            <stringProp name="49">1</stringProp>
+            <stringProp name="47899024">28798</stringProp>
+            <stringProp name="49">1</stringProp>
+          </collectionProp>
+          <collectionProp name="-1609199768">
+            <stringProp name="1570">13</stringProp>
+            <stringProp name="0">0</stringProp>
+            <stringProp name="46822635">13371</stringProp>
+            <stringProp name="46882969">15409</stringProp>
+            <stringProp name="1598">20</stringProp>
+          </collectionProp>
+        </collectionProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-      </kg.apc.jmeter.threads.SteppingThreadGroup>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
       <hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.pacing.time" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA pacing" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -15969,7 +16091,7 @@ vars.put(&quot;cntHouseUO&quot;,i);
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JL Account" enabled="true">
+        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener" enabled="true">
           <stringProp name="cacheKey">f8a134ae-2d12-4372-8ea8-456b96ca34c0</stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
@@ -15997,21 +16119,21 @@ vars.put(&quot;cntAccount&quot;,i);
         </JSR223Listener>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UTG Login" enabled="true">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UTG Login" enabled="false">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-199410366">
+          <collectionProp name="69184865">
             <stringProp name="49">1</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="49">1</stringProp>
-            <stringProp name="46852495">14398</stringProp>
+            <stringProp name="47899024">28798</stringProp>
             <stringProp name="49">1</stringProp>
           </collectionProp>
-          <collectionProp name="-766309122">
-            <stringProp name="49">1</stringProp>
-            <stringProp name="1599718">4318</stringProp>
-            <stringProp name="49">1</stringProp>
-            <stringProp name="46730409">10080</stringProp>
-            <stringProp name="49">1</stringProp>
+          <collectionProp name="-1167090636">
+            <stringProp name="50">2</stringProp>
+            <stringProp name="48">0</stringProp>
+            <stringProp name="1751517">9600</stringProp>
+            <stringProp name="46999528">19198</stringProp>
+            <stringProp name="50">2</stringProp>
           </collectionProp>
         </collectionProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -16021,7 +16143,7 @@ vars.put(&quot;cntAccount&quot;,i);
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
       </kg.apc.jmeter.threads.UltimateThreadGroup>
       <hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.pacing.time" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA pacing" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -16072,18 +16194,18 @@ vars.put(&quot;cntSearch&quot;,i);
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UTG Search" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-199410366">
+          <collectionProp name="69184865">
             <stringProp name="49">1</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="49">1</stringProp>
-            <stringProp name="46852495">14398</stringProp>
+            <stringProp name="47899024">28798</stringProp>
             <stringProp name="49">1</stringProp>
           </collectionProp>
-          <collectionProp name="-766309122">
+          <collectionProp name="-1882028490">
             <stringProp name="49">1</stringProp>
-            <stringProp name="1599718">4318</stringProp>
-            <stringProp name="49">1</stringProp>
-            <stringProp name="46730409">10080</stringProp>
+            <stringProp name="0"></stringProp>
+            <stringProp name="1688091">7200</stringProp>
+            <stringProp name="47688566">21599</stringProp>
             <stringProp name="49">1</stringProp>
           </collectionProp>
         </collectionProp>
@@ -16094,7 +16216,7 @@ vars.put(&quot;cntSearch&quot;,i);
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
       </kg.apc.jmeter.threads.UltimateThreadGroup>
       <hashTree>
-        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA.pacing.time" enabled="true">
+        <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA pacing" enabled="true">
           <intProp name="ActionProcessor.action">1</intProp>
           <intProp name="ActionProcessor.target">0</intProp>
           <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -16158,16 +16280,6 @@ vars.put(&quot;cntSearch&quot;,i);
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="fias" elementType="Argument">
-              <stringProp name="Argument.name">fias</stringProp>
-              <stringProp name="Argument.value">ee7c1f6d-50bd-4898-8c22-c9c152612e40</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC UC00 init" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
@@ -16224,6 +16336,14 @@ vars.put(&quot;cntSearch&quot;,i);
           </collectionProp>
         </ModuleController>
         <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC UC04 meteringDeviceValue" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-1746072286">TF UC04 meteringDeviceValue</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
         <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC UC08 supplyResourceContract" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
@@ -16237,14 +16357,6 @@ vars.put(&quot;cntSearch&quot;,i);
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="808511924">TF UC09 meteringDeviceData</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC UC04 meteringDeviceValue" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="-1227702913">WorkBench</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-1746072286">TF UC04 meteringDeviceValue</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
@@ -16264,7 +16376,7 @@ vars.put(&quot;cntSearch&quot;,i);
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC UC12 login" enabled="true">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC UC12 login" enabled="false">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -16318,45 +16430,6 @@ vars.put(&quot;cntSearch&quot;,i);
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
-        <objProp>
-          <name>saveConfig</name>
-          <value class="SampleSaveConfiguration">
-            <time>true</time>
-            <latency>true</latency>
-            <timestamp>true</timestamp>
-            <success>true</success>
-            <label>true</label>
-            <code>true</code>
-            <message>true</message>
-            <threadName>true</threadName>
-            <dataType>true</dataType>
-            <encoding>true</encoding>
-            <assertions>false</assertions>
-            <subresults>false</subresults>
-            <responseData>false</responseData>
-            <samplerData>false</samplerData>
-            <xml>false</xml>
-            <fieldNames>true</fieldNames>
-            <responseHeaders>false</responseHeaders>
-            <requestHeaders>false</requestHeaders>
-            <responseDataOnError>false</responseDataOnError>
-            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-            <assertionsResultsToSave>2</assertionsResultsToSave>
-            <bytes>true</bytes>
-            <url>true</url>
-            <fileName>true</fileName>
-            <hostname>true</hostname>
-            <threadCounts>true</threadCounts>
-            <sampleCount>true</sampleCount>
-            <idleTime>true</idleTime>
-            <connectTime>true</connectTime>
-          </value>
-        </objProp>
-        <stringProp name="filename">~/results/${uniq}.csv</stringProp>
-      </ResultCollector>
-      <hashTree/>
       <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="true">
         <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
           <collectionProp name="Arguments.arguments">
@@ -16404,6 +16477,45 @@ vars.put(&quot;cntSearch&quot;,i);
         </elementProp>
         <stringProp name="classname">org.apache.jmeter.visualizers.backend.graphite.GraphiteBackendListenerClient</stringProp>
       </BackendListener>
+      <hashTree/>
+      <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>true</encoding>
+            <assertions>false</assertions>
+            <subresults>false</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>2</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <url>true</url>
+            <fileName>true</fileName>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename">~/results/${uniq}.csv</stringProp>
+      </ResultCollector>
       <hashTree/>
     </hashTree>
   </hashTree>
