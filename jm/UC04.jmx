@@ -82,7 +82,7 @@
         </collectionProp>
       </AuthManager>
       <hashTree/>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC04 meteringDeviceValue" enabled="true"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF UC04 meteringDeviceValue" enabled="false"/>
       <hashTree>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC04.meteringDeviceValues" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>

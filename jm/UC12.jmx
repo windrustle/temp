@@ -2778,7 +2778,7 @@
           </hashTree>
         </hashTree>
       </hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UTG Search" enabled="true">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UTG Login" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
           <collectionProp name="69184865">
             <stringProp name="49">1</stringProp>
@@ -2787,7 +2787,7 @@
             <stringProp name="47899024">28798</stringProp>
             <stringProp name="49">1</stringProp>
           </collectionProp>
-          <collectionProp name="-875881717">
+          <collectionProp name="-1167090636">
             <stringProp name="50">2</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="1751517">9600</stringProp>
