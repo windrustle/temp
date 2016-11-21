@@ -202,19 +202,19 @@
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="UTG Integration" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-301145445">
+          <collectionProp name="-269484153">
             <stringProp name="1">1</stringProp>
             <stringProp name="2">0</stringProp>
             <stringProp name="3">1</stringProp>
-            <stringProp name="4">14398</stringProp>
+            <stringProp name="47899024">28798</stringProp>
             <stringProp name="5">1</stringProp>
           </collectionProp>
-          <collectionProp name="-1328792137">
-            <stringProp name="48687">120</stringProp>
+          <collectionProp name="-1345339311">
+            <stringProp name="49688">239</stringProp>
             <stringProp name="2">0</stringProp>
-            <stringProp name="3">14400</stringProp>
-            <stringProp name="4">14400</stringProp>
-            <stringProp name="5">1</stringProp>
+            <stringProp name="46852332">14340</stringProp>
+            <stringProp name="46851309">14220</stringProp>
+            <stringProp name="49710">240</stringProp>
           </collectionProp>
         </collectionProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
