@@ -126,6 +126,7 @@
 						&lt;met:MeteringValueT2&gt;55.0000&lt;/met:MeteringValueT2&gt;&#xd;
 						&lt;met:MeteringValueT3&gt;60.0000&lt;/met:MeteringValueT3&gt;&#xd;
 						&lt;met:ReadingsSource&gt;soap&lt;/met:ReadingsSource&gt;&#xd;
+						&lt;dev:DateValue&gt;${__time(yyyy-MM-dd)}&lt;/dev:DateValue&gt;&#xd;
 						&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
 					&lt;/dev:CurrentValue&gt;&#xd;
 				&lt;/dev:ElectricDeviceValue&gt;&#xd;
