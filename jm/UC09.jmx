@@ -115,7 +115,7 @@
 		&lt;/base:RequestHeader&gt;&#xd;
 	&lt;/soapenv:Header&gt;&#xd;
 	&lt;soapenv:Body&gt;&#xd;
-		&lt;hous:importMeteringDeviceDataRequest base:version=&quot;10.0.1.1&quot;&gt;&#xd;
+		&lt;hous:importMeteringDeviceDataRequest base:version=&quot;11.0.0.1&quot;&gt;&#xd;
 			&lt;hous:FIASHouseGuid&gt;a17a7644-40cc-4a25-afdb-4a4da935f370&lt;/hous:FIASHouseGuid&gt;&#xd;
 			&lt;hous:MeteringDevice&gt;&#xd;
 				&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
@@ -141,6 +141,7 @@
 							&lt;hous:PressureSensingElementInfo&gt;?&lt;/hous:PressureSensingElementInfo&gt;--&gt;&#xd;
 						&lt;/hous:CollectiveDevice&gt;&#xd;
 					&lt;/hous:BasicChatacteristicts&gt;&#xd;
+					&lt;hous:NotLinkedWithMetering&gt;true&lt;/hous:NotLinkedWithMetering&gt;&#xd;
 					&lt;hous:MunicipalResourceEnergy&gt;&#xd;
 						&lt;met:MeteringValueT1&gt;15.0000&lt;/met:MeteringValueT1&gt;&#xd;
 						&lt;met:MeteringValueT2&gt;20.0000&lt;/met:MeteringValueT2&gt;&#xd;
