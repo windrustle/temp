@@ -6,7 +6,108 @@
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-        <collectionProp name="Arguments.arguments"/>
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="type_org" elementType="Argument">
+            <stringProp name="Argument.name">type_org</stringProp>
+            <stringProp name="Argument.value">A</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="type_org2" elementType="Argument">
+            <stringProp name="Argument.name">type_org2</stringProp>
+            <stringProp name="Argument.value">L</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Password" elementType="Argument">
+            <stringProp name="Argument.name">Password</stringProp>
+            <stringProp name="Argument.value">123qweASD</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="stend" elementType="Argument">
+            <stringProp name="Argument.name">stend</stringProp>
+            <stringProp name="Argument.value">NT</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="CODEREG" elementType="Argument">
+            <stringProp name="Argument.name">CODEREG</stringProp>
+            <stringProp name="Argument.value">71</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="codeOktmo" elementType="Argument">
+            <stringProp name="Argument.name">codeOktmo</stringProp>
+            <stringProp name="Argument.value">01000000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Funccode" elementType="Argument">
+            <stringProp name="Argument.name">Funccode</stringProp>
+            <stringProp name="Argument.value">1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="ORGTYPEBASIC" elementType="Argument">
+            <stringProp name="Argument.name">ORGTYPEBASIC</stringProp>
+            <stringProp name="Argument.value">UL</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="webHostname" elementType="Argument">
+            <stringProp name="Argument.name">webHostname</stringProp>
+            <stringProp name="Argument.value">nt01.dom.test.gosuslugi.ru</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="webPort" elementType="Argument">
+            <stringProp name="Argument.name">webPort</stringProp>
+            <stringProp name="Argument.value">80</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NT_db_pool" elementType="Argument">
+            <stringProp name="Argument.name">NT_db_pool</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NT_db_db" elementType="Argument">
+            <stringProp name="Argument.name">NT_db_db</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NT_hcsnsidb" elementType="Argument">
+            <stringProp name="Argument.name">NT_hcsnsidb</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="NT_db_db_ppa" elementType="Argument">
+            <stringProp name="Argument.name">NT_db_db_ppa</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="guid_okopf_num" elementType="Argument">
+            <stringProp name="Argument.name">guid_okopf_num</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="nameorg" elementType="Argument">
+            <stringProp name="Argument.name">nameorg</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="code_oko" elementType="Argument">
+            <stringProp name="Argument.name">code_oko</stringProp>
+            <stringProp name="Argument.value">12165</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="guid_okopf_num" elementType="Argument">
+            <stringProp name="Argument.name">guid_okopf_num</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="nameorg" elementType="Argument">
+            <stringProp name="Argument.name">nameorg</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="code_oko" elementType="Argument">
+            <stringProp name="Argument.name">code_oko</stringProp>
+            <stringProp name="Argument.value">50102</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
@@ -77,122 +178,10 @@
       <hashTree/>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF01 createOrg" enabled="false"/>
       <hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="type_org" elementType="Argument">
-              <stringProp name="Argument.name">type_org</stringProp>
-              <stringProp name="Argument.value">A</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="type_org2" elementType="Argument">
-              <stringProp name="Argument.name">type_org2</stringProp>
-              <stringProp name="Argument.value">L</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="Password" elementType="Argument">
-              <stringProp name="Argument.name">Password</stringProp>
-              <stringProp name="Argument.value">123qweASD</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="code_oko" elementType="Argument">
-              <stringProp name="Argument.name">code_oko</stringProp>
-              <stringProp name="Argument.value">12165</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="UC01_Create_Org_paicing" elementType="Argument">
-              <stringProp name="Argument.name">UC01_Create_Org_paicing</stringProp>
-              <stringProp name="Argument.value">${__if(${__isDefined(UC01_Create_Org_paicing)},1,${UC01_Create_Org_paicing},64000,)}</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="stend" elementType="Argument">
-              <stringProp name="Argument.name">stend</stringProp>
-              <stringProp name="Argument.value">NT</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="CODEREG" elementType="Argument">
-              <stringProp name="Argument.name">CODEREG</stringProp>
-              <stringProp name="Argument.value">71</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="codeOktmo" elementType="Argument">
-              <stringProp name="Argument.name">codeOktmo</stringProp>
-              <stringProp name="Argument.value">01000000</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="Funccode" elementType="Argument">
-              <stringProp name="Argument.name">Funccode</stringProp>
-              <stringProp name="Argument.value">1</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="ORGTYPEBASIC" elementType="Argument">
-              <stringProp name="Argument.name">ORGTYPEBASIC</stringProp>
-              <stringProp name="Argument.value">UL</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="webHostname" elementType="Argument">
-              <stringProp name="Argument.name">webHostname</stringProp>
-              <stringProp name="Argument.value">nt01.dom.test.gosuslugi.ru</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="webPort" elementType="Argument">
-              <stringProp name="Argument.name">webPort</stringProp>
-              <stringProp name="Argument.value">80</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="esiaDbHostname" elementType="Argument">
-              <stringProp name="Argument.name">esiaDbHostname</stringProp>
-              <stringProp name="Argument.value">nidp01</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-            <elementProp name="esiaDbPort" elementType="Argument">
-              <stringProp name="Argument.name">esiaDbPort</stringProp>
-              <stringProp name="Argument.value">5432</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC01.createOrg" enabled="true">
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
         <hashTree>
-          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="__TC: PreGen" enabled="true">
-            <boolProp name="TransactionController.includeTimers">false</boolProp>
-            <boolProp name="TransactionController.parent">true</boolProp>
-          </TransactionController>
-          <hashTree>
-            <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="__JDBC R: Select dbdb" enabled="true">
-              <stringProp name="dataSource">${stend}_db_db</stringProp>
-              <stringProp name="query">SELECT guid,name FROM orsm.nsi_okopf_f WHERE is_actual = &apos;true&apos; and code = &apos;${code_oko}&apos;</stringProp>
-              <stringProp name="queryArguments"></stringProp>
-              <stringProp name="queryArgumentsTypes"></stringProp>
-              <stringProp name="queryTimeout"></stringProp>
-              <stringProp name="queryType">Select Statement</stringProp>
-              <stringProp name="resultSetHandler">Store as String</stringProp>
-              <stringProp name="resultVariable"></stringProp>
-              <stringProp name="variableNames"></stringProp>
-            </JDBCSampler>
-            <hashTree>
-              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="guid_okopf_num" enabled="true">
-                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-                <stringProp name="RegexExtractor.refname">guid_okopf_num</stringProp>
-                <stringProp name="RegexExtractor.regex">\n(.+)\t</stringProp>
-                <stringProp name="RegexExtractor.template">$1$</stringProp>
-                <stringProp name="RegexExtractor.default">WARNING</stringProp>
-                <stringProp name="RegexExtractor.match_number">1</stringProp>
-              </RegexExtractor>
-              <hashTree/>
-              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="nameorg" enabled="true">
-                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-                <stringProp name="RegexExtractor.refname">nameorg</stringProp>
-                <stringProp name="RegexExtractor.regex">\n.+\t(.+)</stringProp>
-                <stringProp name="RegexExtractor.template">$1$</stringProp>
-                <stringProp name="RegexExtractor.default">WARNING</stringProp>
-                <stringProp name="RegexExtractor.match_number">1</stringProp>
-              </RegexExtractor>
-              <hashTree/>
-            </hashTree>
-          </hashTree>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller OGV" enabled="true">
             <stringProp name="IfController.condition">&quot;${ORGTYPEBASIC}&quot;==&quot;OGV&quot;</stringProp>
             <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -331,16 +320,6 @@ null, &apos;${personinn_1}&apos;, &apos;Специалист&apos;, &apos;8872${
             <boolProp name="IfController.evaluateAll">false</boolProp>
           </IfController>
           <hashTree>
-            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="code_oko" elementType="Argument">
-                  <stringProp name="Argument.name">code_oko</stringProp>
-                  <stringProp name="Argument.value">50102</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </Arguments>
-            <hashTree/>
             <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="__TC: Add_Admin" enabled="true">
               <boolProp name="TransactionController.includeTimers">false</boolProp>
               <boolProp name="TransactionController.parent">true</boolProp>
