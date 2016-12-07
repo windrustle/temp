@@ -31,6 +31,11 @@
             <stringProp name="Argument.value">123qweASD</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="sessionGUID" elementType="Argument">
+            <stringProp name="Argument.name">sessionGUID</stringProp>
+            <stringProp name="Argument.value">${__UUID)</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
           <elementProp name="randomSmev" elementType="Argument">
             <stringProp name="Argument.name">randomSmev</stringProp>
             <stringProp name="Argument.value">50</stringProp>
@@ -238,19 +243,6 @@
             </HeaderManager>
             <hashTree/>
           </hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
-            <collectionProp name="HeaderManager.headers">
-              <elementProp name="Referer" elementType="Header">
-                <stringProp name="Header.name">Referer</stringProp>
-                <stringProp name="Header.value">http://${host}/</stringProp>
-              </elementProp>
-              <elementProp name="If-Modified-Since" elementType="Header">
-                <stringProp name="Header.name">If-Modified-Since</stringProp>
-                <stringProp name="Header.value">0</stringProp>
-              </elementProp>
-            </collectionProp>
-          </HeaderManager>
-          <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="main/user" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
@@ -273,7 +265,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -329,7 +321,37 @@
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">sessionGUID</stringProp>
+              <stringProp name="RegexExtractor.regex">SuimSessionGuid=(.{36})</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">${__UUID}</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
           </hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://${host}/</stringProp>
+              </elementProp>
+              <elementProp name="If-Modified-Since" elementType="Header">
+                <stringProp name="Header.name">If-Modified-Since</stringProp>
+                <stringProp name="Header.value">0</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Session-GUID</stringProp>
+                <stringProp name="Header.value">${sessionGUID}</stringProp>
+              </elementProp>
+              <elementProp name="State-GUID" elementType="Header">
+                <stringProp name="Header.name">State-GUID</stringProp>
+                <stringProp name="Header.value">/</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="main/availableModules" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments"/>
@@ -351,7 +373,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -429,7 +451,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -537,7 +559,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -568,7 +590,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -607,7 +629,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -681,7 +703,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -712,7 +734,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -751,7 +773,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -804,7 +826,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -843,7 +865,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -881,7 +903,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -964,7 +986,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -1023,7 +1045,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -1082,7 +1104,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -1120,7 +1142,7 @@
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="false">
               <collectionProp name="HeaderManager.headers">
                 <elementProp name="Request-GUID" elementType="Header">
                   <stringProp name="Header.name">Request-GUID</stringProp>
@@ -4119,6 +4141,15 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF10(14) houseuo" enabled="false"/>
       <hashTree>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+          <stringProp name="CounterConfig.start">100</stringProp>
+          <stringProp name="CounterConfig.end"></stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">counter</stringProp>
+          <stringProp name="CounterConfig.format"></stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
+        <hashTree/>
         <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
           <boolProp name="clearEachIteration">true</boolProp>
           <boolProp name="useExpires">false</boolProp>
@@ -4144,10 +4175,6 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
             <elementProp name="User-Agent" elementType="Header">
               <stringProp name="Header.name">User-Agent</stringProp>
               <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36</stringProp>
-            </elementProp>
-            <elementProp name="Session-GUID" elementType="Header">
-              <stringProp name="Header.name">Session-GUID</stringProp>
-              <stringProp name="Header.value">${__UUID}</stringProp>
             </elementProp>
             <elementProp name="Accept" elementType="Header">
               <stringProp name="Header.name">Accept</stringProp>
@@ -8152,7 +8179,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <hashTree/>
             </hashTree>
           </hashTree>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller 1-4" enabled="false">
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller 1-4" enabled="true">
             <boolProp name="LoopController.continue_forever">true</boolProp>
             <stringProp name="LoopController.loops">${__Random(1,4)}</stringProp>
           </LoopController>
@@ -8655,7 +8682,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   <collectionProp name="Arguments.arguments">
                     <elementProp name="" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                      <stringProp name="Argument.value">{&quot;porch&quot;:{&quot;house&quot;:{&quot;guid&quot;:&quot;${houseRef}&quot;},&quot;porchNumber&quot;:&quot;П${__Random(1,99)}&quot;,&quot;floorCount&quot;:&quot;1&quot;,&quot;buildYear&quot;:2016}}</stringProp>
+                      <stringProp name="Argument.value">{&quot;porch&quot;:{&quot;house&quot;:{&quot;guid&quot;:&quot;${houseRef}&quot;},&quot;porchNumber&quot;:&quot;П${counter}&quot;,&quot;floorCount&quot;:&quot;1&quot;,&quot;buildYear&quot;:2016}}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                     </elementProp>
                   </collectionProp>
@@ -9151,7 +9178,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="" elementType="HTTPArgument">
                         <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                        <stringProp name="Argument.value">{&quot;residentialPremise&quot;:{&quot;houseGuid&quot;:&quot;${houseRef}&quot;,&quot;flatNumber&quot;:&quot;К${__Random(0,9999)}&quot;,&quot;cadastreNumber&quot;:&quot;&quot;,&quot;totalSquare&quot;:&quot;20&quot;,&quot;apartmentCategory&quot;:{&quot;guid&quot;:&quot;${category}&quot;},&quot;cadastreNumberIsAbsent&quot;:true,&quot;params&quot;:[],&quot;porchRef&quot;:{&quot;guid&quot;:&quot;${porchGUID}&quot;},&quot;residentialPremiseType&quot;:{&quot;guid&quot;:&quot;${premiseType}&quot;},&quot;residentialSquare&quot;:&quot;20&quot;}}</stringProp>
+                        <stringProp name="Argument.value">{&quot;residentialPremise&quot;:{&quot;houseGuid&quot;:&quot;${houseRef}&quot;,&quot;flatNumber&quot;:&quot;К${counter}&quot;,&quot;cadastreNumber&quot;:&quot;&quot;,&quot;totalSquare&quot;:&quot;20&quot;,&quot;apartmentCategory&quot;:{&quot;guid&quot;:&quot;${category}&quot;},&quot;cadastreNumberIsAbsent&quot;:true,&quot;params&quot;:[],&quot;porchRef&quot;:{&quot;guid&quot;:&quot;${porchGUID}&quot;},&quot;residentialPremiseType&quot;:{&quot;guid&quot;:&quot;${premiseType}&quot;},&quot;residentialSquare&quot;:&quot;10&quot;}}</stringProp>
                         <stringProp name="Argument.metadata">=</stringProp>
                       </elementProp>
                     </collectionProp>
@@ -9204,7 +9231,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                 </UniformRandomTimer>
                 <hashTree/>
               </hashTree>
-              <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="house card2" enabled="true"/>
+              <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="house card" enabled="true"/>
               <hashTree>
                 <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
                   <collectionProp name="HeaderManager.headers">
@@ -9219,7 +9246,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   </collectionProp>
                 </HeaderManager>
                 <hashTree/>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card2/routeChanged" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card/routeChanged" enabled="true">
                   <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                     <collectionProp name="Arguments.arguments">
@@ -9265,7 +9292,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   </HeaderManager>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card2/houses" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card/houses" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
                     <collectionProp name="Arguments.arguments"/>
                   </elementProp>
@@ -9296,7 +9323,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   </HeaderManager>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card2/params-search" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card/params-search" enabled="true">
                   <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                     <collectionProp name="Arguments.arguments">
@@ -9358,7 +9385,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   </ResponseAssertion>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card2/params-search" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card/params-search" enabled="true">
                   <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
                     <collectionProp name="Arguments.arguments">
@@ -9404,7 +9431,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   </HeaderManager>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card2/is-region-uploaded" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card/is-region-uploaded" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
                     <collectionProp name="Arguments.arguments"/>
                   </elementProp>
@@ -9434,7 +9461,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   </HeaderManager>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card2/timezones" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card/timezones" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="regionGuid" elementType="HTTPArgument">
@@ -9473,7 +9500,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   </HeaderManager>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card2/porches" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card/porches" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
                     <collectionProp name="Arguments.arguments"/>
                   </elementProp>
@@ -9504,7 +9531,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   </HeaderManager>
                   <hashTree/>
                 </hashTree>
-                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card2/fileDetails" enabled="true">
+                <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="UC10/house-card/fileDetails" enabled="true">
                   <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
                     <collectionProp name="Arguments.arguments">
                       <elementProp name="fileUids" elementType="HTTPArgument">
@@ -9584,10 +9611,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
             <elementProp name="User-Agent" elementType="Header">
               <stringProp name="Header.name">User-Agent</stringProp>
               <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36</stringProp>
-            </elementProp>
-            <elementProp name="Session-GUID" elementType="Header">
-              <stringProp name="Header.name">Session-GUID</stringProp>
-              <stringProp name="Header.value">${__UUID}</stringProp>
             </elementProp>
             <elementProp name="Accept" elementType="Header">
               <stringProp name="Header.name">Accept</stringProp>
@@ -10553,10 +10576,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <stringProp name="Header.name">User-Agent</stringProp>
               <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36</stringProp>
             </elementProp>
-            <elementProp name="Session-GUID" elementType="Header">
-              <stringProp name="Header.name">Session-GUID</stringProp>
-              <stringProp name="Header.value">${__UUID}</stringProp>
-            </elementProp>
             <elementProp name="Accept" elementType="Header">
               <stringProp name="Header.name">Accept</stringProp>
               <stringProp name="Header.value">application/json; charset=utf-8</stringProp>
@@ -10564,6 +10583,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
             <elementProp name="Cache-Control" elementType="Header">
               <stringProp name="Header.name">Cache-Control</stringProp>
               <stringProp name="Header.value">max-age=0</stringProp>
+            </elementProp>
+            <elementProp name="Request-GUID" elementType="Header">
+              <stringProp name="Header.name">Request-GUID</stringProp>
+              <stringProp name="Header.value">${__UUID}</stringProp>
             </elementProp>
           </collectionProp>
         </HeaderManager>
@@ -10590,7 +10613,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="false">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -10610,7 +10633,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
             </collectionProp>
           </ModuleController>
           <hashTree/>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="false">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -10622,7 +10645,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC login" enabled="true">
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC login" enabled="false">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="-1227702913">WorkBench</stringProp>
               <stringProp name="764597751">Test Plan</stringProp>
@@ -10630,7 +10653,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
             </collectionProp>
           </ModuleController>
           <hashTree/>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="false">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -10642,7 +10665,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC organization start-decision" enabled="true">
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC organization start-decision" enabled="false">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="-1227702913">WorkBench</stringProp>
               <stringProp name="764597751">Test Plan</stringProp>
@@ -10650,7 +10673,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
             </collectionProp>
           </ModuleController>
           <hashTree/>
-          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="false">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
             <stringProp name="ActionProcessor.duration">0</stringProp>
@@ -10662,7 +10685,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
             </UniformRandomTimer>
             <hashTree/>
           </hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC house list" enabled="true">
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC house list" enabled="false">
             <collectionProp name="ModuleController.node_path">
               <stringProp name="-1227702913">WorkBench</stringProp>
               <stringProp name="764597751">Test Plan</stringProp>
@@ -10699,10 +10722,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
             <elementProp name="User-Agent" elementType="Header">
               <stringProp name="Header.name">User-Agent</stringProp>
               <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36</stringProp>
-            </elementProp>
-            <elementProp name="Session-GUID" elementType="Header">
-              <stringProp name="Header.name">Session-GUID</stringProp>
-              <stringProp name="Header.value">${__UUID}</stringProp>
             </elementProp>
             <elementProp name="Accept" elementType="Header">
               <stringProp name="Header.name">Accept</stringProp>
@@ -11699,6 +11718,14 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC10" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-634437221">TF12(02) login</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Debug Controller" enabled="false"/>
         <hashTree>
           <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC00" enabled="true">
