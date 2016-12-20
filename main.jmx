@@ -10372,6 +10372,17 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF302 supplyResourceContract" enabled="false"/>
       <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">data/fias.csv</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames"></stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S302" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
@@ -10527,17 +10538,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF303 contract" enabled="false"/>
       <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-          <stringProp name="delimiter">,</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">data/fias.csv</stringProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">false</boolProp>
-          <stringProp name="shareMode">shareMode.all</stringProp>
-          <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames"></stringProp>
-        </CSVDataSet>
-        <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S303" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
@@ -10791,7 +10791,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 		&lt;base:RequestHeader&gt;&#xd;
 			&lt;base:Date&gt;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.SXXX)}&lt;/base:Date&gt;&#xd;
 			&lt;base:MessageGUID&gt;${__UUID}&lt;/base:MessageGUID&gt;&#xd;
-			&lt;!--&lt;base:SenderID&gt;?&lt;/base:SenderID&gt;--&gt;&#xd;
 			&lt;base:orgPPAGUID&gt;5bc377ea-1f6f-4473-8af8-e5b130290b3e&lt;/base:orgPPAGUID&gt;&#xd;
 			&lt;base:IsOperatorSignature&gt;true&lt;/base:IsOperatorSignature&gt;&#xd;
 		&lt;/base:RequestHeader&gt;&#xd;
@@ -10811,27 +10810,12 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 						&lt;/hous:State&gt;&#xd;
 						&lt;hous:UsedYear&gt;2016&lt;/hous:UsedYear&gt;&#xd;
 						&lt;hous:FloorCount&gt;1&lt;/hous:FloorCount&gt;&#xd;
-						&lt;!--&lt;hous:OKTMO&gt;&#xd;
-						&lt;base:code&gt;75701000001&lt;/base:code&gt;&#xd;
-						&lt;/hous:OKTMO&gt;--&gt;&#xd;
 						&lt;hous:OlsonTZ&gt;&#xd;
 							&lt;nsi:Code&gt;6&lt;/nsi:Code&gt;&#xd;
 							&lt;nsi:GUID&gt;1e05329c-6ff0-4a20-b373-bb57c3592c3b&lt;/nsi:GUID&gt;&#xd;
 							&lt;nsi:Name&gt;Екатеринбург&lt;/nsi:Name&gt;&#xd;
 						&lt;/hous:OlsonTZ&gt;&#xd;
 						&lt;hous:CulturalHeritage&gt;1&lt;/hous:CulturalHeritage&gt;&#xd;
-						&lt;!--&lt;hous:OGFData&gt;&#xd;
-						&lt;hous:Code&gt;11052&lt;/hous:Code&gt;&#xd;
-						&lt;hous:Value&gt;&#xd;
-						&lt;hous:StringValue&gt;?&lt;/hous:StringValue&gt;&#xd;
-						&lt;hous:FloatValue&gt;?&lt;/hous:FloatValue&gt;&#xd;
-						&lt;hous:DateTimeValue&gt;?&lt;/hous:DateTimeValue&gt;&#xd;
-						&lt;hous:IntegerValue&gt;?&lt;/hous:IntegerValue&gt;&#xd;
-						&lt;hous:BooleanValue&gt;?&lt;/hous:BooleanValue&gt;&#xd;
-						&lt;hous:NsiCode&gt;3709&lt;/hous:NsiCode&gt;&#xd;
-						&lt;hous:File&gt;?&lt;/hous:File&gt;&#xd;
-						&lt;/hous:Value&gt;&#xd;
-						&lt;/hous:OGFData&gt;--&gt;&#xd;
 					&lt;/hous:BasicCharacteristicts&gt;&#xd;
 					&lt;hous:UndergroundFloorCount&gt;1&lt;/hous:UndergroundFloorCount&gt;&#xd;
 					&lt;hous:MinFloorCount&gt;9&lt;/hous:MinFloorCount&gt;&#xd;
@@ -10840,18 +10824,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 				&lt;hous:NonResidentialPremiseToCreate&gt;&#xd;
 					&lt;hous:No_RSO_GKN_EGRP_Registered&gt;true&lt;/hous:No_RSO_GKN_EGRP_Registered&gt;&#xd;
 					&lt;hous:PremisesNum&gt;1&lt;/hous:PremisesNum&gt;&#xd;
-					&lt;!--&lt;hous:OGFData&gt;&#xd;
-					&lt;hous:Code&gt;20053&lt;/hous:Code&gt;&#xd;
-					&lt;hous:Value&gt;&#xd;
-					&lt;hous:StringValue&gt;?&lt;/hous:StringValue&gt;&#xd;
-					&lt;hous:FloatValue&gt;?&lt;/hous:FloatValue&gt;&#xd;
-					&lt;hous:DateTimeValue&gt;?&lt;/hous:DateTimeValue&gt;&#xd;
-					&lt;hous:IntegerValue&gt;?&lt;/hous:IntegerValue&gt;&#xd;
-					&lt;hous:BooleanValue&gt;?&lt;/hous:BooleanValue&gt;&#xd;
-					&lt;hous:NsiCode&gt;5184&lt;/hous:NsiCode&gt;&#xd;
-					&lt;hous:File&gt;?&lt;/hous:File&gt;&#xd;
-					&lt;/hous:Value&gt;&#xd;
-					&lt;/hous:OGFData&gt;--&gt;&#xd;
 					&lt;hous:TotalArea&gt;50&lt;/hous:TotalArea&gt;&#xd;
 					&lt;hous:IsCommonProperty&gt;1&lt;/hous:IsCommonProperty&gt;&#xd;
 					&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
@@ -10859,25 +10831,12 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 				&lt;hous:EntranceToCreate&gt;&#xd;
 					&lt;hous:EntranceNum&gt;1&lt;/hous:EntranceNum&gt;&#xd;
 					&lt;hous:StoreysCount&gt;9&lt;/hous:StoreysCount&gt;&#xd;
-					&lt;hous:CreationDate&gt;2016-01-01&lt;/hous:CreationDate&gt;&#xd;
 					&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
 				&lt;/hous:EntranceToCreate&gt;&#xd;
 				&lt;hous:ResidentialPremises&gt;&#xd;
 					&lt;hous:ResidentialPremisesToCreate&gt;&#xd;
 						&lt;hous:No_RSO_GKN_EGRP_Registered&gt;true&lt;/hous:No_RSO_GKN_EGRP_Registered&gt;&#xd;
 						&lt;hous:PremisesNum&gt;1&lt;/hous:PremisesNum&gt;&#xd;
-						&lt;!--&lt;hous:OGFData&gt;&#xd;
-						&lt;hous:Code&gt;20002&lt;/hous:Code&gt;&#xd;
-						&lt;hous:Value&gt;&#xd;
-						&lt;hous:StringValue&gt;?&lt;/hous:StringValue&gt;&#xd;
-						&lt;hous:FloatValue&gt;?&lt;/hous:FloatValue&gt;&#xd;
-						&lt;hous:DateTimeValue&gt;?&lt;/hous:DateTimeValue&gt;&#xd;
-						&lt;hous:IntegerValue&gt;?&lt;/hous:IntegerValue&gt;&#xd;
-						&lt;hous:BooleanValue&gt;?&lt;/hous:BooleanValue&gt;&#xd;
-						&lt;hous:NsiCode&gt;5085&lt;/hous:NsiCode&gt;&#xd;
-						&lt;hous:File&gt;?&lt;/hous:File&gt;&#xd;
-						&lt;/hous:Value&gt;&#xd;
-						&lt;/hous:OGFData&gt;--&gt;&#xd;
 						&lt;hous:EntranceNum&gt;1&lt;/hous:EntranceNum&gt;&#xd;
 						&lt;hous:PremisesCharacteristic&gt;&#xd;
 							&lt;nsi:Code&gt;2&lt;/nsi:Code&gt;&#xd;
@@ -10892,32 +10851,9 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 						&lt;hous:No_RSO_GKN_EGRP_Registered&gt;true&lt;/hous:No_RSO_GKN_EGRP_Registered&gt;&#xd;
 						&lt;hous:RoomNumber&gt;1&lt;/hous:RoomNumber&gt;&#xd;
 						&lt;hous:Square&gt;50&lt;/hous:Square&gt;&#xd;
-						&lt;!--&lt;hous:OGFData&gt;&#xd;
-						&lt;hous:Code&gt;20056&lt;/hous:Code&gt;&#xd;
-						&lt;hous:Value&gt;&#xd;
-						&lt;hous:StringValue&gt;?&lt;/hous:StringValue&gt;&#xd;
-						&lt;hous:FloatValue&gt;?&lt;/hous:FloatValue&gt;&#xd;
-						&lt;hous:DateTimeValue&gt;?&lt;/hous:DateTimeValue&gt;&#xd;
-						&lt;hous:IntegerValue&gt;?&lt;/hous:IntegerValue&gt;&#xd;
-						&lt;hous:BooleanValue&gt;?&lt;/hous:BooleanValue&gt;&#xd;
-						&lt;hous:NsiCode&gt;5252&lt;/hous:NsiCode&gt;&#xd;
-						&lt;hous:File&gt;?&lt;/hous:File&gt;&#xd;
-						&lt;/hous:Value&gt;&#xd;
-						&lt;/hous:OGFData&gt;--&gt;&#xd;
 						&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
 					&lt;/hous:LivingRoomToCreate&gt;&#xd;
 				&lt;/hous:ResidentialPremises&gt;&#xd;
-				&lt;!--&lt;hous:LiftToCreate&gt;&#xd;
-				&lt;hous:EntranceNum&gt;1&lt;/hous:EntranceNum&gt;&#xd;
-				&lt;hous:FactoryNum&gt;944&lt;/hous:FactoryNum&gt;&#xd;
-				&lt;hous:Type&gt;&#xd;
-				&lt;nsi:Code&gt;5011&lt;/nsi:Code&gt;&#xd;
-				&lt;nsi:GUID&gt;82dd0bbc-7604-4b9b-ae44-4fd25536329f&lt;/nsi:GUID&gt;&#xd;
-				&lt;nsi:Name&gt;ѕассажирский&lt;/nsi:Name&gt;&#xd;
-				&lt;/hous:Type&gt;&#xd;
-				&lt;hous:OperatingLimit&gt;36&lt;/hous:OperatingLimit&gt;&#xd;
-				&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
-				&lt;/hous:LiftToCreate&gt;--&gt;&#xd;
 			&lt;/hous:ApartmentHouse&gt;&#xd;
 		&lt;/hous:importHouseUORequest&gt;&#xd;
 	&lt;/soapenv:Body&gt;&#xd;
@@ -11006,7 +10942,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 		&lt;base:RequestHeader&gt;&#xd;
 			&lt;base:Date&gt;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.SXXX)}&lt;/base:Date&gt;&#xd;
 			&lt;base:MessageGUID&gt;${__UUID}&lt;/base:MessageGUID&gt;&#xd;
-			&lt;!--&lt;base:SenderID&gt;?&lt;/base:SenderID&gt;--&gt;&#xd;
 			&lt;base:orgPPAGUID&gt;5bc377ea-1f6f-4473-8af8-e5b130290b3e&lt;/base:orgPPAGUID&gt;&#xd;
 			&lt;base:IsOperatorSignature&gt;true&lt;/base:IsOperatorSignature&gt;&#xd;
 		&lt;/base:RequestHeader&gt;&#xd;
@@ -11015,31 +10950,15 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 		&lt;hous:importAccountRequest base:version=&quot;10.0.1.1&quot;&gt;&#xd;
 			&lt;hous:Account&gt;&#xd;
 				&lt;hous:isUOAccount&gt;true&lt;/hous:isUOAccount&gt;&#xd;
-				&lt;!--&lt;hous:isCRAccount&gt;true&lt;/hous:isCRAccount&gt;&#xd;
-				&lt;hous:isRCAccount&gt;true&lt;/hous:isRCAccount&gt;&#xd;
-				&lt;hous:isOGVorOMSAccount&gt;true&lt;/hous:isOGVorOMSAccount&gt;--&gt;&#xd;
 				&lt;hous:CreationDate&gt;2016-01-01T00:00:00.000+00:00&lt;/hous:CreationDate&gt;&#xd;
 				&lt;hous:LivingPersonsNumber&gt;1&lt;/hous:LivingPersonsNumber&gt;&#xd;
 				&lt;hous:TotalSquare&gt;100&lt;/hous:TotalSquare&gt;&#xd;
 				&lt;hous:ResidentialSquare&gt;100&lt;/hous:ResidentialSquare&gt;&#xd;
-				&lt;!--&lt;hous:HeatedArea&gt;50&lt;/hous:HeatedArea&gt;--&gt;&#xd;
-				&lt;!--&lt;hous:Closed&gt;&#xd;
-					&lt;hous:CloseReason&gt;&#xd;
-						&lt;nsi:Code&gt;?&lt;/nsi:Code&gt;&#xd;
-						&lt;nsi:GUID&gt;?&lt;/nsi:GUID&gt;&#xd;
-						&lt;nsi:Name&gt;?&lt;/nsi:Name&gt;&#xd;
-					&lt;/hous:CloseReason&gt;&#xd;
-					&lt;hous:CloseDate&gt;?&lt;/hous:CloseDate&gt;&#xd;
-					&lt;hous:Description&gt;?&lt;/hous:Description&gt;&#xd;
-				&lt;/hous:Closed&gt;--&gt;&#xd;
 				&lt;hous:Accommodation&gt;&#xd;
-					&lt;!--&lt;hous:PremisesGUID&gt;02be7180-0e8f-4ec5-8e46-9b5e3d0309fc&lt;/hous:PremisesGUID&gt;&#xd;
-					&lt;hous:FIASHouseGuid&gt;808ee196-e486-43b6-a2eb-b3e3bc1b1748&lt;/hous:FIASHouseGuid&gt;--&gt;&#xd;
 					&lt;hous:LivingRoomGUID&gt;${roomGUID}&lt;/hous:LivingRoomGUID&gt;&#xd;
 					&lt;hous:SharePercent&gt;100&lt;/hous:SharePercent&gt;&#xd;
 				&lt;/hous:Accommodation&gt;&#xd;
 				&lt;hous:PayerInfo&gt;&#xd;
-					&lt;!--&lt;hous:IsRenter&gt;true&lt;/hous:IsRenter&gt;--&gt;&#xd;
 					&lt;hous:Ind&gt;&#xd;
 						&lt;ind:Surname&gt;Тестов&lt;/ind:Surname&gt;&#xd;
 						&lt;ind:FirstName&gt;Тест&lt;/ind:FirstName&gt;&#xd;
@@ -11047,24 +10966,9 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 						&lt;hous:Sex&gt;M&lt;/hous:Sex&gt;&#xd;
 						&lt;hous:DateOfBirth&gt;2000-01-01&lt;/hous:DateOfBirth&gt;&#xd;
 						&lt;ind:SNILS&gt;${__RandomString(11,1234567890)}&lt;/ind:SNILS&gt;&#xd;
-						&lt;!--&lt;ind:ID&gt;&#xd;
-							&lt;ind:Type&gt;&#xd;
-								&lt;nsi:Code&gt;?&lt;/nsi:Code&gt;&#xd;
-								&lt;nsi:GUID&gt;?&lt;/nsi:GUID&gt;&#xd;
-								&lt;nsi:Name&gt;?&lt;/nsi:Name&gt;&#xd;
-							&lt;/ind:Type&gt;&#xd;
-							&lt;ind:Series&gt;?&lt;/ind:Series&gt;&#xd;
-							&lt;ind:Number&gt;?&lt;/ind:Number&gt;&#xd;
-							&lt;ind:IssueDate&gt;?&lt;/ind:IssueDate&gt;&#xd;
-						&lt;/ind:ID&gt;--&gt;&#xd;
 					&lt;/hous:Ind&gt;&#xd;
-					&lt;!--&lt;hous:Org&gt;&#xd;
-						&lt;org:orgVersionGUID&gt;?&lt;/org:orgVersionGUID&gt;&#xd;
-					&lt;/hous:Org&gt;--&gt;&#xd;
 				&lt;/hous:PayerInfo&gt;&#xd;
 				&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
-				&lt;!--&lt;acc:AccountNumber&gt;Тест-01&lt;/acc:AccountNumber&gt;&#xd;
-				&lt;hous:AccountGUID&gt;?&lt;/hous:AccountGUID&gt;--&gt;&#xd;
 			&lt;/hous:Account&gt;&#xd;
 		&lt;/hous:importAccountRequest&gt;&#xd;
 	&lt;/soapenv:Body&gt;&#xd;
@@ -11158,7 +11062,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 	&lt;/soapenv:Header&gt;&#xd;
 	&lt;soapenv:Body&gt;&#xd;
 		&lt;hous:importMeteringDeviceDataRequest base:version=&quot;11.0.0.1&quot;&gt;&#xd;
-			&lt;hous:FIASHouseGuid&gt;a17a7644-40cc-4a25-afdb-4a4da935f370&lt;/hous:FIASHouseGuid&gt;&#xd;
+			&lt;hous:FIASHouseGuid&gt;c3dceb21-d54e-425e-924d-56798555b8b0&lt;/hous:FIASHouseGuid&gt;&#xd;
 			&lt;hous:MeteringDevice&gt;&#xd;
 				&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
 				&lt;hous:DeviceDataToCreate&gt;&#xd;
@@ -11178,9 +11082,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 						&lt;hous:TemperatureSensor&gt;false&lt;/hous:TemperatureSensor&gt;&#xd;
 						&lt;hous:PressureSensor&gt;false&lt;/hous:PressureSensor&gt;&#xd;
 						&lt;hous:CollectiveDevice&gt;&#xd;
-							&lt;!--&lt;hous:RemoteMeteringInfo&gt;?&lt;/hous:RemoteMeteringInfo&gt;&#xd;
-							&lt;hous:TemperatureSensingElementInfo&gt;?&lt;/hous:TemperatureSensingElementInfo&gt;&#xd;
-							&lt;hous:PressureSensingElementInfo&gt;?&lt;/hous:PressureSensingElementInfo&gt;--&gt;&#xd;
 						&lt;/hous:CollectiveDevice&gt;&#xd;
 					&lt;/hous:BasicChatacteristicts&gt;&#xd;
 					&lt;hous:NotLinkedWithMetering&gt;true&lt;/hous:NotLinkedWithMetering&gt;&#xd;
@@ -11276,17 +11177,16 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 	&lt;/soapenv:Header&gt;&#xd;
 	&lt;soapenv:Body&gt;&#xd;
 		&lt;dev:importMeteringDeviceValuesRequest base:version=&quot;10.0.1.1&quot;&gt;&#xd;
-			&lt;dev:FIASHouseGuid&gt;a17a7644-40cc-4a25-afdb-4a4da935f370&lt;/dev:FIASHouseGuid&gt;&#xd;
+			&lt;dev:FIASHouseGuid&gt;c3dceb21-d54e-425e-924d-56798555b8b0&lt;/dev:FIASHouseGuid&gt;&#xd;
 			&lt;dev:MeteringDevicesValues&gt;&#xd;
-				&lt;dev:MeteringDeviceRootGUID&gt;1d197ba7-fb90-4f7e-96d2-3d1a7c2f156f&lt;/dev:MeteringDeviceRootGUID&gt;&#xd;
-				&lt;!--&lt;dev:MeteringDeviceVersionGUID&gt;?&lt;/dev:MeteringDeviceVersionGUID&gt;--&gt;&#xd;
+				&lt;dev:MeteringDeviceRootGUID&gt;bc328d3e-1a55-4aed-88c4-4210fdcf64d1&lt;/dev:MeteringDeviceRootGUID&gt;&#xd;
 				&lt;dev:ElectricDeviceValue&gt;&#xd;
 					&lt;dev:CurrentValue&gt;&#xd;
 						&lt;met:MeteringValueT1&gt;50.0000000&lt;/met:MeteringValueT1&gt;&#xd;
 						&lt;met:MeteringValueT2&gt;55.0000000&lt;/met:MeteringValueT2&gt;&#xd;
 						&lt;met:MeteringValueT3&gt;60.0000000&lt;/met:MeteringValueT3&gt;&#xd;
 						&lt;met:ReadingsSource&gt;soap&lt;/met:ReadingsSource&gt;&#xd;
-						&lt;dev:DateValue&gt;${__time(yyyy-MM-dd)}&lt;/dev:DateValue&gt;&#xd;
+						&lt;dev:DateValue&gt;2016-12-01&lt;/dev:DateValue&gt;&#xd;
 						&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
 					&lt;/dev:CurrentValue&gt;&#xd;
 				&lt;/dev:ElectricDeviceValue&gt;&#xd;
@@ -11369,7 +11269,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 		&lt;base:RequestHeader&gt;&#xd;
 			&lt;base:Date&gt;${__time(yyyy-MM-dd&apos;T&apos;HH:mm:ss.SXXX)}&lt;/base:Date&gt;&#xd;
 			&lt;base:MessageGUID&gt;${__UUID}&lt;/base:MessageGUID&gt;&#xd;
-			&lt;!--&lt;base:SenderID&gt;?&lt;/base:SenderID&gt;--&gt;&#xd;
 			&lt;base:orgPPAGUID&gt;5bc377ea-1f6f-4473-8af8-e5b130290b3e&lt;/base:orgPPAGUID&gt;&#xd;
 			&lt;base:IsOperatorSignature&gt;true&lt;/base:IsOperatorSignature&gt;&#xd;
 		&lt;/base:RequestHeader&gt;&#xd;
@@ -11384,12 +11283,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 				&lt;base:TransportGUID&gt;${guid}&lt;/base:TransportGUID&gt;&#xd;
 			&lt;/bil:PaymentInformation&gt;&#xd;
 			&lt;bil:PaymentDocument&gt;&#xd;
-				&lt;acc:AccountGuid&gt;7bd0b3ef-4ddf-4d75-968c-df67fc1eb447&lt;/acc:AccountGuid&gt;&#xd;
-				&lt;!--&lt;bil1:PaymentDocumentNumber&gt;?&lt;/bil1:PaymentDocumentNumber&gt;--&gt;&#xd;
+				&lt;acc:AccountGuid&gt;${accountGUID}&lt;/acc:AccountGuid&gt;&#xd;
 				&lt;bil:AddressInfo&gt;&#xd;
 					&lt;bil:LivingPersonsNumber&gt;1&lt;/bil:LivingPersonsNumber&gt;&#xd;
 					&lt;bil:ResidentialSquare&gt;100&lt;/bil:ResidentialSquare&gt;&#xd;
-					&lt;!--&lt;bil:HeatedArea&gt;33&lt;/bil:HeatedArea&gt;--&gt;&#xd;
 					&lt;bil:TotalSquare&gt;100&lt;/bil:TotalSquare&gt;&#xd;
 				&lt;/bil:AddressInfo&gt;&#xd;
 				&lt;bil:ChargeInfo&gt;&#xd;
@@ -11403,152 +11300,12 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 						&lt;bil:TotalPayable&gt;0&lt;/bil:TotalPayable&gt;&#xd;
 						&lt;bil:AccountingPeriodTotal&gt;0&lt;/bil:AccountingPeriodTotal&gt;&#xd;
 						&lt;bil:CalcExplanation&gt;0&lt;/bil:CalcExplanation&gt;&#xd;
-						&lt;!--&lt;bil:orgPPAGUID&gt;?&lt;/bil:orgPPAGUID&gt;&#xd;
-						&lt;bil:ServiceCharge&gt;&#xd;
-							&lt;bil:MoneyRecalculation&gt;10&lt;/bil:MoneyRecalculation&gt;&#xd;
-							&lt;bil:MoneyDiscount&gt;3&lt;/bil:MoneyDiscount&gt;&#xd;
-						&lt;/bil:ServiceCharge&gt;&#xd;
-						&lt;bil:Consumption&gt;&#xd;
-							&lt;bil:Volume type=&quot;I&quot;&gt;55&lt;/bil:Volume&gt;&#xd;
-						&lt;/bil:Consumption&gt;--&gt;&#xd;
 					&lt;/bil:HousingService&gt;&#xd;
-					&lt;!--&lt;bil:AdditionalService&gt;&#xd;
-					&lt;bil:ServiceType&gt;&#xd;
-					&lt;nsi:Code&gt;?&lt;/nsi:Code&gt;&#xd;
-					&lt;nsi:GUID&gt;?&lt;/nsi:GUID&gt;&#xd;
-					&lt;nsi:Name&gt;?&lt;/nsi:Name&gt;&#xd;
-					&lt;/bil:ServiceType&gt;&#xd;
-					&lt;bil:Rate&gt;?&lt;/bil:Rate&gt;&#xd;
-					&lt;bil:TotalPayable&gt;?&lt;/bil:TotalPayable&gt;&#xd;
-					&lt;bil:AccountingPeriodTotal&gt;?&lt;/bil:AccountingPeriodTotal&gt;&#xd;
-					&lt;bil:CalcExplanation&gt;?&lt;/bil:CalcExplanation&gt;&#xd;
-					&lt;bil:orgPPAGUID&gt;?&lt;/bil:orgPPAGUID&gt;&#xd;
-					&lt;bil:ServiceCharge&gt;&#xd;
-					&lt;bil:MoneyRecalculation&gt;?&lt;/bil:MoneyRecalculation&gt;&#xd;
-					&lt;bil:MoneyDiscount&gt;?&lt;/bil:MoneyDiscount&gt;&#xd;
-					&lt;/bil:ServiceCharge&gt;&#xd;
-					&lt;bil:Consumption&gt;&#xd;
-					&lt;bil:Volume type=&quot;?&quot;&gt;?&lt;/bil:Volume&gt;&#xd;
-					&lt;/bil:Consumption&gt;&#xd;
-					&lt;/bil:AdditionalService&gt;&#xd;
-					&lt;bil:MunicipalService&gt;&#xd;
-					&lt;bil:ServiceType&gt;&#xd;
-					&lt;nsi:Code&gt;1.1&lt;/nsi:Code&gt;&#xd;
-					&lt;nsi:GUID&gt;353cb8d7-1f10-402f-9164-1b93d1c90ecc&lt;/nsi:GUID&gt;&#xd;
-					&lt;nsi:Name&gt;?&lt;/nsi:Name&gt;&#xd;
-					&lt;/bil:ServiceType&gt;&#xd;
-					&lt;bil:Rate&gt;55&lt;/bil:Rate&gt;&#xd;
-					&lt;bil:TotalPayable&gt;150&lt;/bil:TotalPayable&gt;&#xd;
-					&lt;bil:AccountingPeriodTotal&gt;33&lt;/bil:AccountingPeriodTotal&gt;&#xd;
-					&lt;bil:CalcExplanation&gt;10&lt;/bil:CalcExplanation&gt;&#xd;
-					&lt;bil:orgPPAGUID&gt;a598a860-950c-4bd8-9630-1cb5071bb87b&lt;/bil:orgPPAGUID&gt;&#xd;
-					&lt;bil:ServiceCharge&gt;&#xd;
-					&lt;bil:MoneyRecalculation&gt;10&lt;/bil:MoneyRecalculation&gt;&#xd;
-					&lt;bil:MoneyDiscount&gt;22&lt;/bil:MoneyDiscount&gt;&#xd;
-					&lt;/bil:ServiceCharge&gt;&#xd;
-					&lt;bil:PiecemealPayment&gt;&#xd;
-					&lt;bil:paymentPeriodPiecemealPaymentSum&gt;10&lt;/bil:paymentPeriodPiecemealPaymentSum&gt;&#xd;
-					&lt;bil:pastPaymentPeriodPiecemealPaymentSum&gt;10&lt;/bil:pastPaymentPeriodPiecemealPaymentSum&gt;&#xd;
-					&lt;bil:piecemealPaymentPercentRub&gt;10&lt;/bil:piecemealPaymentPercentRub&gt;&#xd;
-					&lt;bil:piecemealPaymentPercent&gt;10&lt;/bil:piecemealPaymentPercent&gt;&#xd;
-					&lt;bil:piecemealPaymentSum&gt;10&lt;/bil:piecemealPaymentSum&gt;&#xd;
-					&lt;/bil:PiecemealPayment&gt;&#xd;
-					&lt;bil:PaymentRecalculation&gt;&#xd;
-					&lt;bil:recalculationReason&gt;22&lt;/bil:recalculationReason&gt;&#xd;
-					&lt;bil:sum&gt;10&lt;/bil:sum&gt;&#xd;
-					&lt;/bil:PaymentRecalculation&gt;&#xd;
-					&lt;bil:ServiceInformation&gt;&#xd;
-					&lt;bil:individualConsumptionCurrentValue&gt;10&lt;/bil:individualConsumptionCurrentValue&gt;&#xd;
-					&lt;bil:houseOverallNeedsCurrentValue&gt;10&lt;/bil:houseOverallNeedsCurrentValue&gt;&#xd;
-					&lt;bil:houseTotalIndividualConsumption&gt;10&lt;/bil:houseTotalIndividualConsumption&gt;&#xd;
-					&lt;bil:houseTotalHouseOverallNeeds&gt;10&lt;/bil:houseTotalHouseOverallNeeds&gt;&#xd;
-					&lt;bil:houseOverallNeedsNorm&gt;10&lt;/bil:houseOverallNeedsNorm&gt;&#xd;
-					&lt;bil:individualConsumptionNorm&gt;10&lt;/bil:individualConsumptionNorm&gt;&#xd;
-					&lt;/bil:ServiceInformation&gt;&#xd;
-					&lt;bil:Consumption&gt;&#xd;
-					&lt;bil:Volume type=&quot;I&quot; determiningMethod=&quot;N&quot;&gt;33&lt;/bil:Volume&gt;&#xd;
-					&lt;/bil:Consumption&gt;&#xd;
-					&lt;bil:MunicipalServiceIndividualConsumptionPayable&gt;10&lt;/bil:MunicipalServiceIndividualConsumptionPayable&gt;&#xd;
-					&lt;bil:MunicipalServiceCommunalConsumptionPayable&gt;10&lt;/bil:MunicipalServiceCommunalConsumptionPayable&gt;&#xd;
-					&lt;/bil:MunicipalService&gt;--&gt;&#xd;
 				&lt;/bil:ChargeInfo&gt;&#xd;
-				&lt;!--&lt;bil:CapitalRepairCharge&gt;&#xd;
-				&lt;bil:Contribution&gt;?&lt;/bil:Contribution&gt;&#xd;
-				&lt;bil:AccountingPeriodTotal&gt;?&lt;/bil:AccountingPeriodTotal&gt;&#xd;
-				&lt;bil:MoneyRecalculation&gt;?&lt;/bil:MoneyRecalculation&gt;&#xd;
-				&lt;bil:MoneyDiscount&gt;?&lt;/bil:MoneyDiscount&gt;&#xd;
-				&lt;bil:TotalPayable&gt;?&lt;/bil:TotalPayable&gt;&#xd;
-				&lt;bil:orgPPAGUID&gt;?&lt;/bil:orgPPAGUID&gt;&#xd;
-				&lt;/bil:CapitalRepairCharge&gt;&#xd;
-				&lt;bil:Insurance&gt;&#xd;
-				&lt;bil:InsuranceProductGUID&gt;?&lt;/bil:InsuranceProductGUID&gt;&#xd;
-				&lt;bil:Rate&gt;?&lt;/bil:Rate&gt;&#xd;
-				&lt;bil:TotalPayable&gt;?&lt;/bil:TotalPayable&gt;&#xd;
-				&lt;bil:AccountingPeriodTotal&gt;?&lt;/bil:AccountingPeriodTotal&gt;&#xd;
-				&lt;bil:CalcExplanation&gt;?&lt;/bil:CalcExplanation&gt;&#xd;
-				&lt;bil:ServiceCharge&gt;&#xd;
-				&lt;bil:MoneyRecalculation&gt;?&lt;/bil:MoneyRecalculation&gt;&#xd;
-				&lt;bil:MoneyDiscount&gt;?&lt;/bil:MoneyDiscount&gt;&#xd;
-				&lt;/bil:ServiceCharge&gt;&#xd;
-				&lt;bil:Consumption&gt;&#xd;
-				&lt;bil:Volume type=&quot;?&quot;&gt;?&lt;/bil:Volume&gt;&#xd;
-				&lt;/bil:Consumption&gt;&#xd;
-				&lt;/bil:Insurance&gt;&#xd;
-				&lt;bil:CapitalRepairDebt&gt;&#xd;
-				&lt;base:Month&gt;?&lt;/base:Month&gt;&#xd;
-				&lt;base:Year&gt;?&lt;/base:Year&gt;&#xd;
-				&lt;bil:TotalPayable&gt;?&lt;/bil:TotalPayable&gt;&#xd;
-				&lt;bil:orgPPAGUID&gt;?&lt;/bil:orgPPAGUID&gt;&#xd;
-				&lt;/bil:CapitalRepairDebt&gt;&#xd;
-				&lt;bil:ChargeDebt&gt;&#xd;
-				&lt;bil:HousingService&gt;&#xd;
-				&lt;base:Month&gt;?&lt;/base:Month&gt;&#xd;
-				&lt;base:Year&gt;?&lt;/base:Year&gt;&#xd;
-				&lt;bil:TotalPayable&gt;?&lt;/bil:TotalPayable&gt;&#xd;
-				&lt;bil:orgPPAGUID&gt;?&lt;/bil:orgPPAGUID&gt;&#xd;
-				&lt;bil:ServiceType&gt;&#xd;
-				&lt;nsi:Code&gt;?&lt;/nsi:Code&gt;&#xd;
-				&lt;nsi:GUID&gt;?&lt;/nsi:GUID&gt;&#xd;
-				&lt;nsi:Name&gt;?&lt;/nsi:Name&gt;&#xd;
-				&lt;/bil:ServiceType&gt;&#xd;
-				&lt;/bil:HousingService&gt;&#xd;
-				&lt;bil:AdditionalService&gt;&#xd;
-				&lt;base:Month&gt;?&lt;/base:Month&gt;&#xd;
-				&lt;base:Year&gt;?&lt;/base:Year&gt;&#xd;
-				&lt;bil:TotalPayable&gt;?&lt;/bil:TotalPayable&gt;&#xd;
-				&lt;bil:orgPPAGUID&gt;?&lt;/bil:orgPPAGUID&gt;&#xd;
-				&lt;bil:ServiceType&gt;&#xd;
-				&lt;nsi:Code&gt;?&lt;/nsi:Code&gt;&#xd;
-				&lt;nsi:GUID&gt;?&lt;/nsi:GUID&gt;&#xd;
-				&lt;nsi:Name&gt;?&lt;/nsi:Name&gt;&#xd;
-				&lt;/bil:ServiceType&gt;&#xd;
-				&lt;/bil:AdditionalService&gt;&#xd;
-				&lt;bil:MunicipalService&gt;&#xd;
-				&lt;base:Month&gt;?&lt;/base:Month&gt;&#xd;
-				&lt;base:Year&gt;?&lt;/base:Year&gt;&#xd;
-				&lt;bil:TotalPayable&gt;?&lt;/bil:TotalPayable&gt;&#xd;
-				&lt;bil:orgPPAGUID&gt;?&lt;/bil:orgPPAGUID&gt;&#xd;
-				&lt;bil:ServiceType&gt;&#xd;
-				&lt;nsi:Code&gt;?&lt;/nsi:Code&gt;&#xd;
-				&lt;nsi:GUID&gt;?&lt;/nsi:GUID&gt;&#xd;
-				&lt;nsi:Name&gt;?&lt;/nsi:Name&gt;&#xd;
-				&lt;/bil:ServiceType&gt;&#xd;
-				&lt;/bil:MunicipalService&gt;&#xd;
-				&lt;/bil:ChargeDebt&gt;--&gt;&#xd;
 				&lt;bil:Expose&gt;true&lt;/bil:Expose&gt;&#xd;
-				&lt;!--&lt;bil:Withdraw&gt;true&lt;/bil:Withdraw&gt;&#xd;
-				&lt;bil:DebtPreviousPeriods&gt;100&lt;/bil:DebtPreviousPeriods&gt;&#xd;
-				&lt;bil:AdvanceBllingPeriod&gt;150&lt;/bil:AdvanceBllingPeriod&gt;&#xd;
-				&lt;bil:totalPiecemealPaymentSum&gt;350&lt;/bil:totalPiecemealPaymentSum&gt;&#xd;
-				&lt;bil:PaymentsTaken&gt;?&lt;/bil:PaymentsTaken&gt;--&gt;&#xd;
 				&lt;base:TransportGUID&gt;${__UUID}&lt;/base:TransportGUID&gt;&#xd;
-				&lt;!--&lt;bil1:PaymentDocumentID&gt;?&lt;/bil1:PaymentDocumentID&gt;--&gt;&#xd;
 				&lt;bil:PaymentInformationKey&gt;${guid}&lt;/bil:PaymentInformationKey&gt;&#xd;
 			&lt;/bil:PaymentDocument&gt;&#xd;
-			&lt;!--&lt;bil:WithdrawPaymentDocument&gt;&#xd;
-			&lt;base:TransportGUID&gt;?&lt;/base:TransportGUID&gt;&#xd;
-			&lt;bil1:PaymentDocumentID&gt;?&lt;/bil1:PaymentDocumentID&gt;&#xd;
-			&lt;/bil:WithdrawPaymentDocument&gt;--&gt;&#xd;
 		&lt;/bil:importPaymentDocumentRequest&gt;&#xd;
 	&lt;/soapenv:Body&gt;&#xd;
 &lt;/soapenv:Envelope&gt;</stringProp>
@@ -12286,6 +12043,14 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </ConstantThroughputTimer>
           <hashTree/>
         </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC302" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="654215500">TF302 supplyResourceContract</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
         <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC303" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
@@ -12307,14 +12072,6 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="1704143829">TF307 account</stringProp>
-          </collectionProp>
-        </ModuleController>
-        <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC302" enabled="true">
-          <collectionProp name="ModuleController.node_path">
-            <stringProp name="-1227702913">WorkBench</stringProp>
-            <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="654215500">TF302 supplyResourceContract</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
@@ -12618,11 +12375,11 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         </ModuleController>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="DebugTG" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="DebugTG" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">10</stringProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -12634,6 +12391,54 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="TestPlan.comments">TODO</stringProp>
       </ThreadGroup>
       <hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC init" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-722271746">TF init</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC101" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="-2086289816">TF101 createOrg</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC201" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="1938294922">TF201 login</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC205" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="803905183">TF205 houseuo</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC208" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="1693640725">TF208 account</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC302" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="654215500">TF302 supplyResourceContract</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
         <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC303" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
@@ -12682,73 +12487,34 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC302" enabled="true">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC401" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="654215500">TF302 supplyResourceContract</stringProp>
+            <stringProp name="-454502324">TF401 notificationsOfOrderExecution</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Debug Store" enabled="false"/>
-        <hashTree>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC init" enabled="true">
-            <collectionProp name="ModuleController.node_path">
-              <stringProp name="-1227702913">WorkBench</stringProp>
-              <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="-722271746">TF init</stringProp>
-            </collectionProp>
-          </ModuleController>
-          <hashTree/>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC101" enabled="true">
-            <collectionProp name="ModuleController.node_path">
-              <stringProp name="-1227702913">WorkBench</stringProp>
-              <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="-2086289816">TF101 createOrg</stringProp>
-            </collectionProp>
-          </ModuleController>
-          <hashTree/>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC201" enabled="true">
-            <collectionProp name="ModuleController.node_path">
-              <stringProp name="-1227702913">WorkBench</stringProp>
-              <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="1938294922">TF201 login</stringProp>
-            </collectionProp>
-          </ModuleController>
-          <hashTree/>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC205" enabled="true">
-            <collectionProp name="ModuleController.node_path">
-              <stringProp name="-1227702913">WorkBench</stringProp>
-              <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="803905183">TF205 houseuo</stringProp>
-            </collectionProp>
-          </ModuleController>
-          <hashTree/>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC208" enabled="true">
-            <collectionProp name="ModuleController.node_path">
-              <stringProp name="-1227702913">WorkBench</stringProp>
-              <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="1693640725">TF208 account</stringProp>
-            </collectionProp>
-          </ModuleController>
-          <hashTree/>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC401" enabled="true">
-            <collectionProp name="ModuleController.node_path">
-              <stringProp name="-1227702913">WorkBench</stringProp>
-              <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="-454502324">TF401 notificationsOfOrderExecution</stringProp>
-            </collectionProp>
-          </ModuleController>
-          <hashTree/>
-          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC502" enabled="true">
-            <collectionProp name="ModuleController.node_path">
-              <stringProp name="-1227702913">WorkBench</stringProp>
-              <stringProp name="764597751">Test Plan</stringProp>
-              <stringProp name="1301868771">TF502 search</stringProp>
-            </collectionProp>
-          </ModuleController>
-          <hashTree/>
-        </hashTree>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC502" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="1301868771">TF502 search</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="WAITING">false</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE"></stringProp>
+          <stringProp name="RESPONSE_MESSAGE"></stringProp>
+          <stringProp name="REQUEST_DATA"></stringProp>
+          <stringProp name="RESPONSE_DATA">${fias}</stringProp>
+          <stringProp name="RESPONSE_TIME"></stringProp>
+          <stringProp name="LATENCY"></stringProp>
+          <stringProp name="CONNECT"></stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Debug Results" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
@@ -12794,21 +12560,24 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="cacheKey">f8a134ae-2d12-4372-8ea8-456b96ca34c0</stringProp>
         <stringProp name="filename"></stringProp>
         <stringProp name="parameters"></stringProp>
-        <stringProp name="script">import org.apache.jmeter.services.FileServer;
-def m=prev.getThreadName()=~/^.+?\s(.+?)\s.+$/
-String s=props.get(&quot;progdir&quot;);
-if(!s){
-	s=FileServer.getFileServer().getBaseDir();
-	props.put(&quot;progdir&quot;,s);
-	new File(s+&quot;/results&quot;).mkdir();
-}
-FileOutputStream fos=null;
-while(!fos){fos=new FileOutputStream(s+&quot;/results&quot;+vars.get(&quot;uniq&quot;)+&quot;.&quot;+prev.getResponseCode()?.substring(0,3)+&quot;.&quot;+(m?m.group(1):&quot;&quot;)+&quot;.xml&quot;,true);}
-fos.write((&quot;&lt;s t=\&quot;&quot;+new Date(prev.getStartTime()).format(&quot;yyyy-MM-dd HH:mm:ss&quot;)+&quot;\&quot; s=\&quot;&quot;+prev.getSampleLabel()+&quot;\&quot; g=\&quot;&quot;+prev.getThreadName()+&quot;\&quot;&gt;\n&lt;!--Request headers:\n&quot;+prev.getRequestHeaders().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Request body:\n&quot;+prev.getSamplerData().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Response header:\n&quot;+prev.getResponseHeaders().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Response body:\n&quot;+prev.getResponseDataAsString().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;\n--&gt;\n&lt;/s&gt;\n&quot;).getBytes());
-fos.flush();
-fos.close();
-fos.finalize();
-</stringProp>
+        <stringProp name="script">import org.apache.jmeter.services.FileServer
+try{
+	def m=prev.getThreadName()=~/^.+?\s(.+?)\s.+$/
+	String s=props.get(&quot;progdir&quot;);
+	if(!s){
+		s=FileServer.getFileServer().getBaseDir();
+		props.put(&quot;progdir&quot;,s);
+		new File(s+&quot;/results&quot;).mkdir();
+	}
+	FileOutputStream fos=null;
+	while(!fos){fos=new FileOutputStream(s+&quot;/results&quot;+vars.get(&quot;uniq&quot;)+&quot;.&quot;+prev.getResponseCode().substring(0,3)+&quot;.&quot;+(m?m.group(1):&quot;&quot;)+&quot;.xml&quot;,true);}
+	fos.write((&quot;&lt;s t=\&quot;&quot;+new Date(prev.getStartTime()).format(&quot;yyyy-MM-dd HH:mm:ss&quot;)+&quot;\&quot; s=\&quot;&quot;+prev.getSampleLabel()+&quot;\&quot; g=\&quot;&quot;+prev.getThreadName()+&quot;\&quot;&gt;\n&lt;!--Request headers:\n&quot;+prev.getRequestHeaders().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Request body:\n&quot;+prev.getSamplerData().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Response header:\n&quot;+prev.getResponseHeaders().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Response body:\n&quot;+prev.getResponseDataAsString().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;\n--&gt;\n&lt;/s&gt;\n&quot;).getBytes());
+	fos.flush();
+	fos.close();
+	fos.finalize();
+}catch(e){
+	log.error(&quot;Log writer error: &quot;+e.toString()+&quot;, at: t=\&quot;&quot;+new Date(prev.getStartTime()).format(&quot;yyyy-MM-dd HH:mm:ss&quot;)+&quot;\&quot; s=\&quot;&quot;+prev.getSampleLabel()+&quot;\&quot; g=\&quot;&quot;+prev.getThreadName())
+}</stringProp>
         <stringProp name="scriptLanguage">groovy</stringProp>
       </JSR223Listener>
       <hashTree/>
