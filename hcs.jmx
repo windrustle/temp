@@ -2622,7 +2622,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
           <stringProp name="HTTPSampler.embedded_url_re">^.*gosuslugi.ru.*$</stringProp>
         </ConfigTestElement>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S101" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC101/createOrg" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -3708,7 +3708,7 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
           <stringProp name="HTTPSampler.embedded_url_re">^.*gosuslugi.ru.*$</stringProp>
         </ConfigTestElement>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S201" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC201/login" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -3875,7 +3875,7 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
           <stringProp name="HTTPSampler.embedded_url_re">^.*gosuslugi.ru.*$</stringProp>
         </ConfigTestElement>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S205" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC205/houseuo" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -9563,7 +9563,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
           <stringProp name="HTTPSampler.embedded_url_re">^.*gosuslugi.ru.*$</stringProp>
         </ConfigTestElement>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S208" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC208/account" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -10383,7 +10383,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
           <stringProp name="variableNames"></stringProp>
         </CSVDataSet>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S302" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC302/supplyResourceContract" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -10538,7 +10538,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF303 contract" enabled="false"/>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S303" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC303/contract" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -10764,7 +10764,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF304 houseuo" enabled="false"/>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S304" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC304/houseuo" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -10915,7 +10915,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF307 account" enabled="false"/>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S307" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC307/account" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -11028,9 +11028,9 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF310 meteringDeviceData" enabled="false"/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF310 meteringDevice" enabled="false"/>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S310" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC310/meteringDevice" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -11145,7 +11145,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF312 meteringDeviceValue" enabled="false"/>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S312" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC312/meteringDeviceValue" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -11242,7 +11242,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF314 paymentDocument" enabled="false"/>
       <hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S314" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC314/paymentDocument" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -11376,7 +11376,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
           <stringProp name="variableNames">req</stringProp>
         </CSVDataSet>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S401" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC401/notificationsOfOrderExecution" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -11501,7 +11501,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
           <stringProp name="HTTPSampler.embedded_url_re">^.*gosuslugi.ru.*$</stringProp>
         </ConfigTestElement>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_S502" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="_UC502/search" enabled="true">
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
@@ -12196,7 +12196,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="STG310 meteringDeviceData" enabled="false">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="STG310 meteringDevice" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">240</stringProp>
         <stringProp name="Threads initial delay">80</stringProp>
