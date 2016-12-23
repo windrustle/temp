@@ -10053,8 +10053,8 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 	vars.put(&quot;houseCode&quot;,hm.items[i].house.address.house.houseGuid)
 	vars.put(&quot;itemGUID&quot;,hm.items[i].guid)
 }catch(Exception e){
-	vars.put(&quot;houseCode&quot;,&quot;${failedToObtain_houseCode}&quot;)
-	vars.put(&quot;itemGUID&quot;,&quot;${failedToObtain_itemGUID}&quot;)
+	vars.put(&quot;houseCode&quot;,&apos;${failedToObtain_houseCode}&apos;)
+	vars.put(&quot;itemGUID&quot;,&apos;${failedToObtain_itemGUID}&apos;)
 }finally{
 	vars.put(&quot;shares&quot;,&quot;shareSize\&quot;:{\&quot;sizePct\&quot;:\&quot;100\&quot;},\&quot;apartment&quot;)
 }
@@ -10145,8 +10145,8 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
 	vars.put(&quot;houseCode&quot;,hm.items[i].address.house.houseGuid)
 	vars.put(&quot;itemGUID&quot;,hm.items[i].guid)
 }catch(Exception e){
-	vars.put(&quot;houseCode&quot;,&quot;${failedToObtain_houseCode}&quot;)
-	vars.put(&quot;itemGUID&quot;,&quot;${failedToObtain_itemGUID}&quot;)
+	vars.put(&quot;houseCode&quot;,&apos;${failedToObtain_houseCode}&apos;)
+	vars.put(&quot;itemGUID&quot;,&apos;${failedToObtain_itemGUID}&apos;)
 }finally{
 	vars.put(&quot;shares&quot;,&quot;house&quot;)
 }
@@ -11855,7 +11855,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">0</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">1799</stringProp>
+        <stringProp name="Start users period">17990</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">16192</stringProp>
@@ -11896,7 +11896,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">4799</stringProp>
+        <stringProp name="Start users period">47990</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">19187</stringProp>
@@ -11936,7 +11936,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">20</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">205</stringProp>
+        <stringProp name="Start users period">2050</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">14496</stringProp>
@@ -11977,7 +11977,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">30</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">3599</stringProp>
+        <stringProp name="Start users period">35990</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">17966</stringProp>
@@ -12018,7 +12018,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">40</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">59</stringProp>
+        <stringProp name="Start users period">590</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">14180</stringProp>
@@ -12079,7 +12079,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-962436615">TF310 meteringDeviceData</stringProp>
+            <stringProp name="-606179921">TF310 meteringDevice</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
@@ -12106,7 +12106,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">50</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">59</stringProp>
+        <stringProp name="Start users period">590</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">14170</stringProp>
@@ -12138,7 +12138,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">60</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">59</stringProp>
+        <stringProp name="Start users period">590</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">14160</stringProp>
@@ -12170,7 +12170,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">70</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">59</stringProp>
+        <stringProp name="Start users period">590</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">14150</stringProp>
@@ -12202,7 +12202,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">80</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">59</stringProp>
+        <stringProp name="Start users period">590</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">14140</stringProp>
@@ -12234,7 +12234,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">90</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">59</stringProp>
+        <stringProp name="Start users period">590</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">14130</stringProp>
@@ -12266,7 +12266,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">100</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">59</stringProp>
+        <stringProp name="Start users period">590</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">14120</stringProp>
@@ -12298,7 +12298,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="Threads initial delay">110</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">130</stringProp>
+        <stringProp name="Start users period">1300</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
         <stringProp name="flighttime">14301</stringProp>
@@ -12375,13 +12375,13 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         </ModuleController>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="DebugTG" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="DebugTG" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">10</stringProp>
+          <stringProp name="LoopController.loops">0</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <longProp name="ThreadGroup.start_time">1478762165000</longProp>
         <longProp name="ThreadGroup.end_time">1478762165000</longProp>
@@ -12391,7 +12391,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="TestPlan.comments">TODO</stringProp>
       </ThreadGroup>
       <hashTree>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC init" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC init" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12399,7 +12399,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC101" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC101" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12407,7 +12407,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC201" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC201" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12415,7 +12415,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC205" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC205" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12423,7 +12423,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC208" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC208" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12431,7 +12431,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC302" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC302" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12439,7 +12439,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC303" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC303" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12447,7 +12447,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC304" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC304" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12455,7 +12455,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC307" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC307" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12467,11 +12467,11 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
-            <stringProp name="-962436615">TF310 meteringDeviceData</stringProp>
+            <stringProp name="-606179921">TF310 meteringDevice</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC312" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC312" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12479,7 +12479,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC314" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC314" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12487,7 +12487,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC401" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC401" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12495,7 +12495,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC502" enabled="false">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC502" enabled="true">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -12503,7 +12503,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Debug Sampler" enabled="false">
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Debug Sampler" enabled="true">
           <boolProp name="WAITING">false</boolProp>
           <boolProp name="SUCCESFULL">true</boolProp>
           <stringProp name="RESPONSE_CODE"></stringProp>
@@ -12570,7 +12570,11 @@ try{
 		new File(s+&quot;/results&quot;).mkdir();
 	}
 	FileOutputStream fos=null;
-	String code=prev.getAssertionResults()[0].isFailure()?&quot;ASS&quot;:prev.getResponseCode().substring(0,3)
+	def asserts=prev.getAssertionResults()
+	def code
+	if(asserts){
+		code=asserts[0].isFailure()?&quot;ASS&quot;:prev.getResponseCode().substring(0,3)
+	}
 	while(!fos){fos=new FileOutputStream(s+&quot;/results&quot;+vars.get(&quot;uniq&quot;)+&quot;.&quot;+code+&quot;.&quot;+(m?m.group(1):&quot;&quot;)+&quot;.xml&quot;,true);}
 	fos.write((&quot;&lt;s t=\&quot;&quot;+new Date(prev.getStartTime()).format(&quot;yyyy-MM-dd HH:mm:ss&quot;)+&quot;\&quot; s=\&quot;&quot;+prev.getSampleLabel()+&quot;\&quot; g=\&quot;&quot;+prev.getThreadName()+&quot;\&quot;&gt;\n&lt;!--Request headers:\n&quot;+prev.getRequestHeaders().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Request body:\n&quot;+prev.getSamplerData().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Response header:\n&quot;+prev.getResponseHeaders().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Response body:\n&quot;+prev.getResponseDataAsString().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;\n--&gt;\n&lt;/s&gt;\n&quot;).getBytes());
 	fos.flush();
