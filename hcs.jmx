@@ -98,7 +98,7 @@
           </elementProp>
           <elementProp name="p401" elementType="Argument">
             <stringProp name="Argument.name">p401</stringProp>
-            <stringProp name="Argument.value">20</stringProp>
+            <stringProp name="Argument.value">2</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="p502" elementType="Argument">
@@ -168,7 +168,7 @@
           </elementProp>
           <elementProp name="r401" elementType="Argument">
             <stringProp name="Argument.name">r401</stringProp>
-            <stringProp name="Argument.value">40</stringProp>
+            <stringProp name="Argument.value">400</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="r502" elementType="Argument">
@@ -238,7 +238,7 @@
           </elementProp>
           <elementProp name="c401" elementType="Argument">
             <stringProp name="Argument.name">c401</stringProp>
-            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.value">100</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="c502" elementType="Argument">
@@ -12294,14 +12294,14 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
       </hashTree>
       <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="STG401 notificationsOfOrderExecution" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
-        <stringProp name="ThreadGroup.num_threads">420</stringProp>
+        <stringProp name="ThreadGroup.num_threads">110</stringProp>
         <stringProp name="Threads initial delay">110</stringProp>
         <stringProp name="Start users count">1</stringProp>
         <stringProp name="Start users count burst">0</stringProp>
-        <stringProp name="Start users period">33</stringProp>
+        <stringProp name="Start users period">130</stringProp>
         <stringProp name="Stop users count">1</stringProp>
         <stringProp name="Stop users period">1</stringProp>
-        <stringProp name="flighttime">14024</stringProp>
+        <stringProp name="flighttime">14301</stringProp>
         <stringProp name="rampUp">1</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
