@@ -3645,6 +3645,26 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
             </JDBCSampler>
             <hashTree/>
           </hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">0</stringProp>
+          </TestAction>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="URT101" enabled="true">
+              <stringProp name="ConstantTimer.delay">${c101}</stringProp>
+              <stringProp name="RandomTimer.range">${r101}</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC logout" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-1227702913">WorkBench</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1768304376">TF logout</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
         </hashTree>
         <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="SDWS101" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -9653,6 +9673,26 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               </hashTree>
             </hashTree>
           </hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">0</stringProp>
+          </TestAction>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="URT205" enabled="true">
+              <stringProp name="ConstantTimer.delay">${c205}</stringProp>
+              <stringProp name="RandomTimer.range">${r205}</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC logout" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-1227702913">WorkBench</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1768304376">TF logout</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
         </hashTree>
         <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="SDWS205" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
@@ -10611,6 +10651,26 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <hashTree/>
             </hashTree>
           </hashTree>
+          <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
+            <intProp name="ActionProcessor.action">1</intProp>
+            <intProp name="ActionProcessor.target">0</intProp>
+            <stringProp name="ActionProcessor.duration">0</stringProp>
+          </TestAction>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="URT208" enabled="true">
+              <stringProp name="ConstantTimer.delay">${c208}</stringProp>
+              <stringProp name="RandomTimer.range">${r208}</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC logout" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="-1227702913">WorkBench</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1768304376">TF logout</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
         </hashTree>
         <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="SDWS208" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
