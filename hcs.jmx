@@ -665,7 +665,7 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
           <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="__stopQueue" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="__stopQueue" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -1876,57 +1876,6 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
           </hashTree>
         </hashTree>
       </hashTree>
-      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF logout" enabled="false"/>
-      <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="logout" enabled="true"/>
-        <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login/logout" enabled="true">
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">my.${host}</stringProp>
-            <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-            <stringProp name="HTTPSampler.protocol">https</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/ppa/api/rest/services/ppa/current/user/logout</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <boolProp name="HTTPSampler.image_parser">true</boolProp>
-            <boolProp name="HTTPSampler.monitor">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
-              <collectionProp name="HeaderManager.headers">
-                <elementProp name="Origin" elementType="Header">
-                  <stringProp name="Header.name">Origin</stringProp>
-                  <stringProp name="Header.value">https://my.nt01.dom.test.gosuslugi.ru</stringProp>
-                </elementProp>
-                <elementProp name="Content-Type" elementType="Header">
-                  <stringProp name="Header.name">Content-Type</stringProp>
-                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
-                </elementProp>
-              </collectionProp>
-            </HeaderManager>
-            <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="1344405786">No Content</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
-              <boolProp name="Assertion.assume_success">true</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-              <stringProp name="Scope.variable">z</stringProp>
-            </ResponseAssertion>
-            <hashTree/>
-          </hashTree>
-        </hashTree>
-      </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF organization start-decision" enabled="false"/>
       <hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="organization start-decision" enabled="true"/>
@@ -2851,6 +2800,57 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
           </HTTPSamplerProxy>
           <hashTree/>
+        </hashTree>
+      </hashTree>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF logout" enabled="false"/>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="logout" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login/logout" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">my.${host}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/ppa/api/rest/services/ppa/current/user/logout</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.image_parser">true</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Origin" elementType="Header">
+                  <stringProp name="Header.name">Origin</stringProp>
+                  <stringProp name="Header.value">https://my.nt01.dom.test.gosuslugi.ru</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="1344405786">No Content</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_message</stringProp>
+              <boolProp name="Assertion.assume_success">true</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+              <stringProp name="Scope.variable">z</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
         </hashTree>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="TF101 createOrg" enabled="false"/>
@@ -11052,17 +11052,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="__S301/init" enabled="true">
-            <stringProp name="cacheKey">6b16cdac-3a27-40c2-99d4-2ce6b3af6c85</stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters">${__UUID}</stringProp>
-            <stringProp name="script">vars.put(&quot;house&quot;,args[0])
-vars.put(&quot;hnumber&quot;,&quot;T&quot;+(Math.random()*999).toInteger().toString())
-vars.remove(&quot;fias&quot;)
-</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223Sampler>
-          <hashTree/>
           <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
@@ -11079,8 +11068,8 @@ vars.remove(&quot;fias&quot;)
           <hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S301/nsidb/insertHouse" enabled="true">
               <stringProp name="dataSource">znsi</stringProp>
-              <stringProp name="queryType">Update Statement</stringProp>
-              <stringProp name="query">insert into nsism.nsi_house(houseid,houseguid,aoguid,postalcode,oktmo_uid,housenum,eststatus,buildnum,strucnum,strstatus,status_uid,fias_update_date,start_date,end_date,create_date,last_event_date,is_actual,parent_aoguid,additional_name,fias_houseid,fias_houseguid,is_added_manually,cadnum,divtype,is_aggregated)values(&apos;${house}&apos;,&apos;${house}&apos;,&apos;0135a798-2f5f-4d59-81f3-85f4deacaf55&apos;,&apos;456550&apos;,&apos;a1c6dd0e-40a9-41d4-b320-805984121282&apos;,&apos;${hnumber}&apos;,&apos;0&apos;,null,null,&apos;0&apos;,&apos;4979fb1a-8373-4f99-b87b-0c4ee832da15&apos;,now(),now(),now()+interval&apos;10 years&apos;,now(),now(),true,&apos;0135a798-2f5f-4d59-81f3-85f4deacaf55&apos;,null,null,null,true,null,null,false);</stringProp>
+              <stringProp name="queryType">Select Statement</stringProp>
+              <stringProp name="query">with u as(select public.uuid_generate_v4()),g as(select public.uuid_generate_v4())insert into nsism.nsi_house values((select * from u),(select * from g),&apos;f16ed2cf-7779-480b-af5c-b48ac7530793&apos;,&apos;457000&apos;,&apos;7cb4a6b5-8e4f-4bcc-b458-da60a3dd6ce9&apos;,&apos;T&apos;||round(random()*999),&apos;2&apos;,null,null,&apos;0&apos;,&apos;4979fb1a-8373-4f99-b87b-0c4ee832da15&apos;,now(),now(),now()+interval&apos;10 years&apos;,now(),now(),true,&apos;f16ed2cf-7779-480b-af5c-b48ac7530793&apos;,null,(select * from u),(select * from g),false,null,null,false)returning houseguid g,housenum n;</stringProp>
               <stringProp name="queryArguments"></stringProp>
               <stringProp name="queryArgumentsTypes"></stringProp>
               <stringProp name="variableNames"></stringProp>
@@ -11088,14 +11077,28 @@ vars.remove(&quot;fias&quot;)
               <stringProp name="queryTimeout"></stringProp>
               <stringProp name="resultSetHandler">Store as String</stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
+                <stringProp name="cacheKey">ebd8bca4-ddd6-4491-aa4b-399df044e02d</stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">try{
+	HashMap hm=vars.getObject(&quot;znsihouse&quot;)[0]
+	vars.put(&quot;fias&quot;,hm.g)
+	vars.put(&quot;number&quot;,hm.n)
+}catch(e){}
+</stringProp>
+                <stringProp name="scriptLanguage">groovy</stringProp>
+              </JSR223PostProcessor>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="lcsdb" enabled="true"/>
           <hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S301/lcsdb/insertDoc" enabled="true">
               <stringProp name="dataSource">zlcs</stringProp>
               <stringProp name="queryType">Select Statement</stringProp>
-              <stringProp name="query">insert into lcssm.documents(document_id,number,additional_info,name,date)values((select public.uuid_generate_v4()),null,null,null,null)returning document_id d;</stringProp>
+              <stringProp name="query">insert into lcssm.documents values((select public.uuid_generate_v4()),null,null,null,null)returning document_id d;</stringProp>
               <stringProp name="queryArguments"></stringProp>
               <stringProp name="queryArgumentsTypes"></stringProp>
               <stringProp name="variableNames"></stringProp>
@@ -11116,8 +11119,8 @@ vars.remove(&quot;fias&quot;)
             </hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S301/lcsdb/insertAddress" enabled="true">
               <stringProp name="dataSource">zlcs</stringProp>
-              <stringProp name="queryType">Select Statement</stringProp>
-              <stringProp name="query">insert into lcssm.fias_house_address values((select public.uuid_generate_v4()),&apos;c707aaa3-e11d-4586-b6f3-f2761c50c203&apos;,&apos;ca49aa86-1012-4c00-8a09-eeb8f244c1b1&apos;,&apos;54b5dc69-7237-473c-bf48-3d4ed07b00c9&apos;,&apos;5eabf90c-ff10-4675-baf2-dee530a0cabe&apos;,null,&apos;${house}&apos;,&apos;${hnumber}&apos;,null,null,&apos;a1c6dd0e-40a9-41d4-b320-805984121282&apos;,&apos;27eb7c10-a234-44da-a59c-8b1f864966de&apos;,&apos;ab02da2d-ff0d-4bff-b27c-c921adee2a33&apos;,&apos;34bc4096-0b85-4b90-bac1-2539cb030041&apos;,&apos;1d98ce66-3a67-4c0d-bae1-1c35a4543b2b&apos;,null)returning fias_house_address_id f;</stringProp>
+              <stringProp name="queryType">Update Statement</stringProp>
+              <stringProp name="query">insert into lcssm.fias_house_address values((select public.uuid_generate_v4()),&apos;c707aaa3-e11d-4586-b6f3-f2761c50c203&apos;,&apos;ca49aa86-1012-4c00-8a09-eeb8f244c1b1&apos;,&apos;54b5dc69-7237-473c-bf48-3d4ed07b00c9&apos;,&apos;5eabf90c-ff10-4675-baf2-dee530a0cabe&apos;,null,&apos;${fias}&apos;,&apos;${number}&apos;,null,null,&apos;a1c6dd0e-40a9-41d4-b320-805984121282&apos;,&apos;27eb7c10-a234-44da-a59c-8b1f864966de&apos;,&apos;ab02da2d-ff0d-4bff-b27c-c921adee2a33&apos;,&apos;34bc4096-0b85-4b90-bac1-2539cb030041&apos;,&apos;1d98ce66-3a67-4c0d-bae1-1c35a4543b2b&apos;,null);</stringProp>
               <stringProp name="queryArguments"></stringProp>
               <stringProp name="queryArgumentsTypes"></stringProp>
               <stringProp name="variableNames"></stringProp>
@@ -11125,20 +11128,11 @@ vars.remove(&quot;fias&quot;)
               <stringProp name="queryTimeout"></stringProp>
               <stringProp name="resultSetHandler">Store as String</stringProp>
             </JDBCSampler>
-            <hashTree>
-              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
-                <stringProp name="cacheKey">ebd8bca4-ddd6-4491-aa4b-399df044e02d</stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="script">vars.put(&quot;fias&quot;,vars.getObject(&quot;zlcsfias&quot;)[0].f)</stringProp>
-                <stringProp name="scriptLanguage">groovy</stringProp>
-              </JSR223PostProcessor>
-              <hashTree/>
-            </hashTree>
+            <hashTree/>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S301/lcsdb/insertHouse" enabled="true">
               <stringProp name="dataSource">zlcs</stringProp>
               <stringProp name="queryType">Update Statement</stringProp>
-              <stringProp name="query">insert into lcssm.houses(house_id,license_guid,house_address_guid,build_year,square,include_base_guid,agreement_number,registry_status_type,agreement_guid,agreement_date,inclusion_in_registry_date,change_date,base_document_period_from,base_document_period_to,management_org_guid,management_org_root_guid,document_guid,include_base_name,application_guid,original_license_guid,management_type,organization_role_type,is_annulled)values((select public.uuid_generate_v4()),&apos;a04a57e4-aef3-4285-81cd-fd823e368977&apos;,&apos;${fias}&apos;,null,null,null,null,&apos;included&apos;,null,null,now(),now(),now(),now()+interval&apos;10 years&apos;,&apos;6d34a031-8e2e-44cd-a39c-651db764d9c8&apos;,&apos;6d34a031-8e2e-44cd-a39c-651db764d9c8&apos;,&apos;${document}&apos;,null,null,&apos;a04a57e4-aef3-4285-81cd-fd823e368977&apos;,&apos;5&apos;,&apos;1&apos;,null);</stringProp>
+              <stringProp name="query">insert into lcssm.houses values((select public.uuid_generate_v4()),&apos;a04a57e4-aef3-4285-81cd-fd823e368977&apos;,&apos;${fias}&apos;,null,null,null,null,&apos;INCLUDED&apos;,null,null,now(),now(),now(),now()+interval&apos;10 years&apos;,&apos;6d34a031-8e2e-44cd-a39c-651db764d9c8&apos;,&apos;6d34a031-8e2e-44cd-a39c-651db764d9c8&apos;,&apos;${document}&apos;,null,null,&apos;a04a57e4-aef3-4285-81cd-fd823e368977&apos;,5,1,null);</stringProp>
               <stringProp name="queryArguments"></stringProp>
               <stringProp name="queryArgumentsTypes"></stringProp>
               <stringProp name="variableNames"></stringProp>
@@ -13701,7 +13695,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         </ModuleController>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="STG201 login" enabled="false">
+      <kg.apc.jmeter.threads.SteppingThreadGroup guiclass="kg.apc.jmeter.threads.SteppingThreadGroupGui" testclass="kg.apc.jmeter.threads.SteppingThreadGroup" testname="STG201 login" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <stringProp name="ThreadGroup.num_threads">3</stringProp>
         <stringProp name="Threads initial delay">10</stringProp>
@@ -14302,6 +14296,14 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="1693640725">TF208 account</stringProp>
+          </collectionProp>
+        </ModuleController>
+        <hashTree/>
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC301" enabled="true">
+          <collectionProp name="ModuleController.node_path">
+            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="764597751">Test Plan</stringProp>
+            <stringProp name="66390775">TF301 houserls</stringProp>
           </collectionProp>
         </ModuleController>
         <hashTree/>
