@@ -1,0 +1,2 @@
+#! /bin/sh
+java -server -Xms1g -Xmx6g -Xss256k -XX:+UseG1GC -jar /u01/jmeter/bin/ApacheJMeter.jar -n -t hcs.jmx

@@ -1,0 +1,2 @@
+#! /bin/sh
+java -cp /u01/jmeter/bin/ApacheJMeter.jar org.apache.jmeter.util.ShutdownClient Shutdown "$@"
