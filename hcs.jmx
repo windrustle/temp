@@ -2957,7 +2957,12 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
               <stringProp name="resultVariable"></stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
+            </hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S101/esiadb/insertAdmin" enabled="true">
               <stringProp name="dataSource">zuser</stringProp>
               <stringProp name="query">insert into users.roles values(&apos;${userid}&apos;, &apos;ADMIN&apos;);</stringProp>
@@ -2969,7 +2974,12 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
               <stringProp name="resultVariable"></stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
+            </hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S101/esiadb/insertSpecialist" enabled="true">
               <stringProp name="dataSource">zuser</stringProp>
               <stringProp name="query">insert into users.roles values(&apos;${userid}&apos;, &apos;AUTHORIZED_SPECIALIST&apos;);</stringProp>
@@ -2981,7 +2991,12 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
               <stringProp name="resultVariable"></stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
+            </hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S101/esiadb/insertCitizen" enabled="true">
               <stringProp name="dataSource">zuser</stringProp>
               <stringProp name="query">insert into users.roles values(&apos;${userid}&apos;, &apos;CITIZEN&apos;);</stringProp>
@@ -3021,7 +3036,12 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
               <stringProp name="queryTimeout"></stringProp>
               <stringProp name="resultSetHandler">Store as String</stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
+            </hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S101/ordb/insertPers" enabled="true">
               <stringProp name="dataSource">zor</stringProp>
               <stringProp name="queryType">Update Statement</stringProp>
@@ -3034,7 +3054,12 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
               <stringProp name="queryTimeout"></stringProp>
               <stringProp name="resultSetHandler">Store as String</stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="MC main" enabled="true">
             <collectionProp name="ModuleController.node_path">
@@ -3963,7 +3988,12 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
               <stringProp name="resultVariable"></stringProp>
               <stringProp name="variableNames"></stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
@@ -11109,7 +11139,7 @@ vars.put(&quot;document&quot;,UUID.randomUUID().toString())
           <hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S301/nsidb/insertHouse" enabled="true">
               <stringProp name="dataSource">znsi</stringProp>
-              <stringProp name="queryType">Select Statement</stringProp>
+              <stringProp name="queryType">Update Statement</stringProp>
               <stringProp name="query">insert into nsism.nsi_house values(&apos;${house}&apos;,&apos;${fias}&apos;,&apos;f16ed2cf-7779-480b-af5c-b48ac7530793&apos;,&apos;457000&apos;,&apos;7cb4a6b5-8e4f-4bcc-b458-da60a3dd6ce9&apos;,&apos;${number}&apos;,&apos;2&apos;,null,null,&apos;0&apos;,&apos;4979fb1a-8373-4f99-b87b-0c4ee832da15&apos;,now(),now(),now()+interval&apos;10 years&apos;,now(),now(),true,&apos;f16ed2cf-7779-480b-af5c-b48ac7530793&apos;,null,&apos;${house}&apos;,&apos;${fias}&apos;,false,null,null,false);</stringProp>
               <stringProp name="queryArguments"></stringProp>
               <stringProp name="queryArgumentsTypes"></stringProp>
@@ -11118,7 +11148,12 @@ vars.put(&quot;document&quot;,UUID.randomUUID().toString())
               <stringProp name="queryTimeout"></stringProp>
               <stringProp name="resultSetHandler">Store as String</stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="lcsdb" enabled="true"/>
           <hashTree>
@@ -11133,7 +11168,12 @@ vars.put(&quot;document&quot;,UUID.randomUUID().toString())
               <stringProp name="queryTimeout"></stringProp>
               <stringProp name="resultSetHandler">Store as String</stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
+            </hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S301/lcsdb/insertAddress" enabled="true">
               <stringProp name="dataSource">zlcs</stringProp>
               <stringProp name="queryType">Update Statement</stringProp>
@@ -11145,7 +11185,12 @@ vars.put(&quot;document&quot;,UUID.randomUUID().toString())
               <stringProp name="queryTimeout"></stringProp>
               <stringProp name="resultSetHandler">Store as String</stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
+            </hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S301/lcsdb/insertHouse" enabled="true">
               <stringProp name="dataSource">zlcs</stringProp>
               <stringProp name="queryType">Update Statement</stringProp>
@@ -11157,7 +11202,12 @@ vars.put(&quot;document&quot;,UUID.randomUUID().toString())
               <stringProp name="queryTimeout"></stringProp>
               <stringProp name="resultSetHandler">Store as String</stringProp>
             </JDBCSampler>
-            <hashTree/>
+            <hashTree>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
+            </hashTree>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="__addQueueFias" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -13673,7 +13723,8 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
                 <stringProp name="parameters"></stringProp>
                 <stringProp name="filename"></stringProp>
                 <stringProp name="cacheKey"></stringProp>
-                <stringProp name="script">vars.put(&quot;route&quot;,&quot;organizations&quot;)</stringProp>
+                <stringProp name="script">vars.put(&quot;route&quot;,&quot;organizations&quot;)
+vars.put(&quot;roleCode&quot;,&apos;{&quot;code&quot;:&quot;&apos;+vars.get(&quot;roleCode&quot;)+&apos;&quot;}&apos;)</stringProp>
               </JSR223Sampler>
               <hashTree/>
             </hashTree>
@@ -14379,7 +14430,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <intProp name="LoopController.loops">-1</intProp>
+          <stringProp name="LoopController.loops">0</stringProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
