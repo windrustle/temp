@@ -397,37 +397,6 @@
 try intersect</stringProp>
       </TestFragmentController>
       <hashTree>
-        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="__getFIAS" enabled="false">
-          <stringProp name="dataSource">znsi</stringProp>
-          <stringProp name="query">with hm as (select hg from public.dblink (&apos;hostaddr=172.16.202.8 port=5454 dbname=hcshmdb user=postgres password=postgres&apos;,&apos;select houseguid from hmsm.house&apos;) as houses (hg char(36))), agr as (select hg from public.dblink (&apos;hostaddr=172.16.202.8 port=5454 dbname=hcsagrdb user=postgres password=postgres&apos;,&apos;select fias_house_code from agrsm.agr_managed_objects&apos;) as houses (hg char(36))), nsi as (select distinct z.houseguid hg from nsism.nsi_house z inner join nsism.nsi_addrobj x using (aoguid) inner join nsism.nsi_oktmo c on z.oktmo_uid=c.guid where x.regioncode=&apos;74&apos; and x.aolevel=&apos;7&apos; and x.is_actual=true and z.is_actual=true and c.has_children=false and c.is_actual=true) select hg fias from nsi where hg not in (select hg from hm) and hg not in (select hg from agr);</stringProp>
-          <stringProp name="queryArguments"></stringProp>
-          <stringProp name="queryArgumentsTypes"></stringProp>
-          <stringProp name="queryTimeout"></stringProp>
-          <stringProp name="queryType">Select Statement</stringProp>
-          <stringProp name="resultSetHandler">Store as String</stringProp>
-          <stringProp name="resultVariable"></stringProp>
-          <stringProp name="variableNames"></stringProp>
-        </JDBCSampler>
-        <hashTree>
-          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="true">
-            <stringProp name="cacheKey">ddea3e40-3f23-4d99-9427-b08e876d378f</stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="parameters"></stringProp>
-            <stringProp name="script">import org.apache.jmeter.services.FileServer;
-new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
-</stringProp>
-            <stringProp name="scriptLanguage">groovy</stringProp>
-          </JSR223PreProcessor>
-          <hashTree/>
-          <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="true">
-            <stringProp name="FileSaver.filename">~/data/fias.csv</stringProp>
-            <boolProp name="FileSaver.errorsonly">false</boolProp>
-            <boolProp name="FileSaver.skipautonumber">true</boolProp>
-            <boolProp name="FileSaver.skipsuffix">true</boolProp>
-            <boolProp name="FileSaver.successonly">true</boolProp>
-          </ResultSaver>
-          <hashTree/>
-        </hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="__initQueueFias" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
             <collectionProp name="Arguments.arguments"/>
@@ -1373,8 +1342,9 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
               <stringProp name="RegexExtractor.refname">zsaml</stringProp>
               <stringProp name="RegexExtractor.regex">\?(.+?)&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">${failedToObtain_zsaml}</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
             </RegexExtractor>
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -1386,6 +1356,10 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
               <intProp name="Assertion.test_type">16</intProp>
               <stringProp name="Scope.variable">z</stringProp>
             </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login/SSO" enabled="true">
@@ -1484,8 +1458,9 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
               <stringProp name="RegexExtractor.refname">zrelay</stringProp>
               <stringProp name="RegexExtractor.regex">RelayState&quot; value=&quot;(.+?)&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">${failedToObtain_zrelay}</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
             </RegexExtractor>
             <hashTree/>
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
@@ -1493,8 +1468,9 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
               <stringProp name="RegexExtractor.refname">zsaml</stringProp>
               <stringProp name="RegexExtractor.regex">SAMLResponse&quot; value=&quot;(.+?)&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">${failedToObtain_zsaml}</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
             </RegexExtractor>
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -1506,6 +1482,10 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
               <intProp name="Assertion.test_type">16</intProp>
               <stringProp name="Scope.variable">z</stringProp>
             </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login/SAMLAssertionConsumer" enabled="true">
@@ -1596,15 +1576,6 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
               <stringProp name="RegexExtractor.default">/auth/noGost.jsp</stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
             </RegexExtractor>
-            <hashTree/>
-            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-              <collectionProp name="Asserion.test_strings">
-                <stringProp name="-885499133">noGost.jsp</stringProp>
-              </collectionProp>
-              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-              <boolProp name="Assertion.assume_success">false</boolProp>
-              <intProp name="Assertion.test_type">16</intProp>
-            </ResponseAssertion>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login/noGOST-jsp" enabled="true">
@@ -1783,7 +1754,6 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
               <stringProp name="JSONPostProcessor.referenceNames">userId</stringProp>
               <stringProp name="JSONPostProcessor.jsonPathExprs">$.userId</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-              <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_userId}</stringProp>
             </JSONPostProcessor>
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -1794,6 +1764,10 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
               <boolProp name="Assertion.assume_success">false</boolProp>
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="start-decision/roles" enabled="true">
@@ -2676,6 +2650,10 @@ new File(FileServer.getFileServer().getBaseDir()+&quot;/data&quot;).mkdir();
               <stringProp name="Scope.variable">z</stringProp>
             </ResponseAssertion>
             <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
+            <hashTree/>
           </hashTree>
         </hashTree>
       </hashTree>
@@ -3156,6 +3134,10 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
                 <stringProp name="Scope.variable">z</stringProp>
               </ResponseAssertion>
               <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login/SSO" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -3299,6 +3281,10 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
                 <stringProp name="Scope.variable">z</stringProp>
               </ResponseAssertion>
               <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login/SAMLAssertionConsumer" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -3361,6 +3347,10 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="login/registration/" enabled="true">
@@ -3668,8 +3658,20 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
                 <stringProp name="JSONPostProcessor.referenceNames">userAgreementGuid</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_userAgreementGuid}</stringProp>
               </JSONPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="3184265">guid</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S101/registration/organizations-presetroles" enabled="true">
@@ -3867,8 +3869,20 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
                 <stringProp name="JSONPostProcessor.referenceNames">organizationAgreementGuid</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_organizationAgreementGuid}</stringProp>
               </JSONPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="3184265">guid</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S101/registration/organizations" enabled="true">
@@ -3919,6 +3933,10 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
           </hashTree>
@@ -4563,21 +4581,18 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
                 <stringProp name="JSONPostProcessor.referenceNames">regionCode</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].aoGuid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_regionCode}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">regionGUID</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_regionGUID}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">regionNumber</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].regionCode</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_regionNumber}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -4588,6 +4603,10 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/choose-address/areas" enabled="true">
@@ -5317,6 +5336,19 @@ if(vars.get(&quot;roleCode&quot;)==&quot;1&quot;){
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[*].houseNumber</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
               </JSONPostProcessor>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1086437001">houseNumber</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/choose-address/buildings" enabled="true">
@@ -8442,53 +8474,50 @@ vars.put(&quot;aoGuid&quot;,aoGuid)</stringProp>
                 <stringProp name="JSONPostProcessor.referenceNames">houseCode</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].houseGuid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_houseCode}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">oktmoGUID</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].oktmo.guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_oktmoGUID}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">oktmoCode</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].oktmo.code</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_oktmoCode}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">oktmoName</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].oktmo.name</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_oktmoName}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">oktmoChild</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].oktmo.hasChildren</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_oktmoChild}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">oktmoActual</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].oktmo.actual</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_oktmoActual}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                 <collectionProp name="Asserion.test_strings">
                   <stringProp name="1033322953">houseGuid</stringProp>
-                  <stringProp name="105813434">oktmo</stringProp>
                 </collectionProp>
                 <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/choose-address/validate-to-create" enabled="true">
@@ -8657,14 +8686,12 @@ vars.put(&quot;aoGuid&quot;,aoGuid)</stringProp>
                 <stringProp name="JSONPostProcessor.referenceNames">olsonGUID</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.managementOrganization.olsonTZ.guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_olsonGUID}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">manageGUID</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.houseManagementType.guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_manageGUID}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -8675,6 +8702,10 @@ vars.put(&quot;aoGuid&quot;,aoGuid)</stringProp>
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/house-request/houses-conditions" enabled="true">
@@ -8702,7 +8733,6 @@ vars.put(&quot;aoGuid&quot;,aoGuid)</stringProp>
                 <stringProp name="JSONPostProcessor.referenceNames">conditionGUID</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[2].guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_conditionGUID}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -8713,6 +8743,10 @@ vars.put(&quot;aoGuid&quot;,aoGuid)</stringProp>
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/house-request/management-types" enabled="true">
@@ -8910,7 +8944,6 @@ vars.put(&quot;aoGuid&quot;,aoGuid)</stringProp>
                 <stringProp name="JSONPostProcessor.referenceNames">paramGUID</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.params.items[0].guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_paramGUID}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -8921,6 +8954,10 @@ vars.put(&quot;aoGuid&quot;,aoGuid)</stringProp>
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/house-request/params-search" enabled="true">
@@ -9027,7 +9064,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                 <stringProp name="JSONPostProcessor.referenceNames">houseRef</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$.houseRef.guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_houseRef}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -9038,6 +9074,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
           </hashTree>
@@ -9158,7 +9198,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   <stringProp name="JSONPostProcessor.referenceNames">contentGuid</stringProp>
                   <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].attachments[0].contentGuid</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                  <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_contentGuid}</stringProp>
                 </JSONPostProcessor>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -9169,6 +9208,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   <boolProp name="Assertion.assume_success">false</boolProp>
                   <intProp name="Assertion.test_type">16</intProp>
                 </ResponseAssertion>
+                <hashTree/>
+                <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                  <intProp name="OnError.action">4</intProp>
+                </ResultAction>
                 <hashTree/>
               </hashTree>
               <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/house-card/params-search" enabled="true">
@@ -9216,7 +9259,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   <stringProp name="JSONPostProcessor.referenceNames">parentRef</stringProp>
                   <stringProp name="JSONPostProcessor.jsonPathExprs">$.params.items[0].guid</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                  <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_parentRef}</stringProp>
                 </JSONPostProcessor>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -9227,6 +9269,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   <boolProp name="Assertion.assume_success">false</boolProp>
                   <intProp name="Assertion.test_type">16</intProp>
                 </ResponseAssertion>
+                <hashTree/>
+                <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                  <intProp name="OnError.action">4</intProp>
+                </ResultAction>
                 <hashTree/>
               </hashTree>
               <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/house-card/params-search" enabled="true">
@@ -9499,17 +9545,20 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   <stringProp name="JSONPostProcessor.referenceNames">porchGUID</stringProp>
                   <stringProp name="JSONPostProcessor.jsonPathExprs">$.guid</stringProp>
                   <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                  <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_porchGUID}</stringProp>
                 </JSONPostProcessor>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                   <collectionProp name="Asserion.test_strings">
-                    <stringProp name="1270473569">porchNumber</stringProp>
+                    <stringProp name="3184265">guid</stringProp>
                   </collectionProp>
                   <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                   <boolProp name="Assertion.assume_success">false</boolProp>
                   <intProp name="Assertion.test_type">16</intProp>
                 </ResponseAssertion>
+                <hashTree/>
+                <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                  <intProp name="OnError.action">4</intProp>
+                </ResultAction>
                 <hashTree/>
               </hashTree>
               <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/house-card/porches" enabled="true">
@@ -9671,17 +9720,20 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                     <stringProp name="JSONPostProcessor.referenceNames">category</stringProp>
                     <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].guid</stringProp>
                     <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                    <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_category}</stringProp>
                   </JSONPostProcessor>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                     <collectionProp name="Asserion.test_strings">
-                      <stringProp name="-490115845">apartmentCategoryName</stringProp>
+                      <stringProp name="3184265">guid</stringProp>
                     </collectionProp>
                     <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                     <boolProp name="Assertion.assume_success">false</boolProp>
                     <intProp name="Assertion.test_type">16</intProp>
                   </ResponseAssertion>
+                  <hashTree/>
+                  <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                    <intProp name="OnError.action">4</intProp>
+                  </ResultAction>
                   <hashTree/>
                 </hashTree>
                 <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/apartment/premise-types" enabled="true">
@@ -9709,17 +9761,20 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                     <stringProp name="JSONPostProcessor.referenceNames">premiseType</stringProp>
                     <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].guid</stringProp>
                     <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                    <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_premiseType}</stringProp>
                   </JSONPostProcessor>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                     <collectionProp name="Asserion.test_strings">
-                      <stringProp name="-457895589">ResidentPremiseType</stringProp>
+                      <stringProp name="3184265">guid</stringProp>
                     </collectionProp>
                     <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                     <boolProp name="Assertion.assume_success">false</boolProp>
                     <intProp name="Assertion.test_type">16</intProp>
                   </ResponseAssertion>
+                  <hashTree/>
+                  <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                    <intProp name="OnError.action">4</intProp>
+                  </ResultAction>
                   <hashTree/>
                 </hashTree>
                 <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/apartment/houses" enabled="true">
@@ -9829,7 +9884,6 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                     <stringProp name="JSONPostProcessor.referenceNames">parentRef</stringProp>
                     <stringProp name="JSONPostProcessor.jsonPathExprs">$.params.items[0].guid</stringProp>
                     <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                    <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_parentRef}</stringProp>
                   </JSONPostProcessor>
                   <hashTree/>
                   <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -9840,6 +9894,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                     <boolProp name="Assertion.assume_success">false</boolProp>
                     <intProp name="Assertion.test_type">16</intProp>
                   </ResponseAssertion>
+                  <hashTree/>
+                  <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                    <intProp name="OnError.action">4</intProp>
+                  </ResultAction>
                   <hashTree/>
                 </hashTree>
                 <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S205/apartment/params-search" enabled="true">
@@ -10564,24 +10622,17 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   </collectionProp>
                 </HeaderManager>
                 <hashTree/>
-                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
-                  <stringProp name="cacheKey">29643e74-68d8-4933-951f-7c576464dd8e</stringProp>
-                  <stringProp name="filename"></stringProp>
-                  <stringProp name="parameters"></stringProp>
-                  <stringProp name="script">try{
-	def i=(Math.random()*10).toInteger()
-	def hm=new groovy.json.JsonSlurper().parseText(prev.getResponseDataAsString())
-	vars.put(&quot;houseCode&quot;,hm.items[i].house.address.house.houseGuid)
-	vars.put(&quot;itemGUID&quot;,hm.items[i].guid)
-}catch(Exception e){
-	vars.put(&quot;houseCode&quot;,&apos;${failedToObtain_houseCode}&apos;)
-	vars.put(&quot;itemGUID&quot;,&apos;${failedToObtain_itemGUID}&apos;)
-}finally{
-	vars.put(&quot;shares&quot;,&quot;shareSize\&quot;:{\&quot;sizePct\&quot;:\&quot;100\&quot;},\&quot;apartment&quot;)
-}
-</stringProp>
-                  <stringProp name="scriptLanguage">groovy</stringProp>
-                </JSR223PostProcessor>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">houseCode</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.items[0].house.address.house.houseGuid</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">itemGUID</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.items[0].guid</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                </JSONPostProcessor>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                   <collectionProp name="Asserion.test_strings">
@@ -10592,7 +10643,19 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   <intProp name="Assertion.test_type">16</intProp>
                 </ResponseAssertion>
                 <hashTree/>
+                <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                  <intProp name="OnError.action">4</intProp>
+                </ResultAction>
+                <hashTree/>
               </hashTree>
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="__S208/init" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey"></stringProp>
+                <stringProp name="script">vars.put(&quot;shares&quot;,&quot;shareSize\&quot;:{\&quot;sizePct\&quot;:\&quot;100\&quot;},\&quot;apartment&quot;)</stringProp>
+              </JSR223Sampler>
+              <hashTree/>
             </hashTree>
             <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="livingHouse" enabled="false"/>
             <hashTree>
@@ -10656,24 +10719,17 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   </collectionProp>
                 </HeaderManager>
                 <hashTree/>
-                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
-                  <stringProp name="cacheKey">9856fe29-a896-4576-811a-21e89fbb6cf4</stringProp>
-                  <stringProp name="filename"></stringProp>
-                  <stringProp name="parameters"></stringProp>
-                  <stringProp name="script">try{
-	def i=(Math.random()*10).toInteger()
-	def hm=new groovy.json.JsonSlurper().parseText(prev.getResponseDataAsString())
-	vars.put(&quot;houseCode&quot;,hm.items[i].address.house.houseGuid)
-	vars.put(&quot;itemGUID&quot;,hm.items[i].guid)
-}catch(Exception e){
-	vars.put(&quot;houseCode&quot;,&apos;${failedToObtain_houseCode}&apos;)
-	vars.put(&quot;itemGUID&quot;,&apos;${failedToObtain_itemGUID}&apos;)
-}finally{
-	vars.put(&quot;shares&quot;,&quot;house&quot;)
-}
-</stringProp>
-                  <stringProp name="scriptLanguage">groovy</stringProp>
-                </JSR223PostProcessor>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">houseCode</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.items[0].address.house.houseGuid</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                </JSONPostProcessor>
+                <hashTree/>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">itemGUID</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.items[0].guid</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+                </JSONPostProcessor>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                   <collectionProp name="Asserion.test_strings">
@@ -10684,7 +10740,19 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                   <intProp name="Assertion.test_type">16</intProp>
                 </ResponseAssertion>
                 <hashTree/>
+                <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                  <intProp name="OnError.action">4</intProp>
+                </ResultAction>
+                <hashTree/>
               </hashTree>
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="__S208/init" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey"></stringProp>
+                <stringProp name="script">vars.put(&quot;shares&quot;,&quot;house&quot;)</stringProp>
+              </JSR223Sampler>
+              <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S208/account-create/regions" enabled="true">
               <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -10770,21 +10838,18 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                 <stringProp name="JSONPostProcessor.referenceNames">orgRootGUID</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].managementOrgGuid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_orgRootGUID}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">documentGUID</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_documentGUID}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
                 <stringProp name="JSONPostProcessor.referenceNames">versionGUID</stringProp>
                 <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].versionInfoDTO.guid</stringProp>
                 <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
-                <stringProp name="JSONPostProcessor.defaultValues">${failedToObtain_versionGUID}</stringProp>
               </JSONPostProcessor>
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -10795,6 +10860,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S208/account-create/findFundOverhaulMethod" enabled="true">
@@ -10886,6 +10955,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
                 <boolProp name="Assertion.assume_success">false</boolProp>
                 <intProp name="Assertion.test_type">16</intProp>
               </ResponseAssertion>
+              <hashTree/>
+              <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                <intProp name="OnError.action">4</intProp>
+              </ResultAction>
               <hashTree/>
             </hashTree>
           </hashTree>
@@ -10998,6 +11071,18 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
           <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="__S301/init" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">de3efb48-856e-42c5-948b-cf2304f6da97</stringProp>
+            <stringProp name="script">vars.put(&quot;fias&quot;,UUID.randomUUID().toString())
+vars.put(&quot;house&quot;,UUID.randomUUID().toString())
+vars.put(&quot;number&quot;,&quot;T&quot;+(Math.random()*999).toInteger().toString())
+vars.put(&quot;document&quot;,UUID.randomUUID().toString())
+</stringProp>
+          </JSR223Sampler>
+          <hashTree/>
           <TestAction guiclass="TestActionGui" testclass="TestAction" testname="TA thinktime" enabled="true">
             <intProp name="ActionProcessor.action">1</intProp>
             <intProp name="ActionProcessor.target">0</intProp>
@@ -11015,7 +11100,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S301/nsidb/insertHouse" enabled="true">
               <stringProp name="dataSource">znsi</stringProp>
               <stringProp name="queryType">Select Statement</stringProp>
-              <stringProp name="query">with u as(select public.uuid_generate_v4()),g as(select public.uuid_generate_v4())insert into nsism.nsi_house values((select * from u),(select * from g),&apos;f16ed2cf-7779-480b-af5c-b48ac7530793&apos;,&apos;457000&apos;,&apos;7cb4a6b5-8e4f-4bcc-b458-da60a3dd6ce9&apos;,&apos;T&apos;||round(random()*999),&apos;2&apos;,null,null,&apos;0&apos;,&apos;4979fb1a-8373-4f99-b87b-0c4ee832da15&apos;,now(),now(),now()+interval&apos;10 years&apos;,now(),now(),true,&apos;f16ed2cf-7779-480b-af5c-b48ac7530793&apos;,null,(select * from u),(select * from g),false,null,null,false)returning houseguid g,housenum n;</stringProp>
+              <stringProp name="query">insert into nsism.nsi_house values(&apos;${house}&apos;,&apos;${fias}&apos;,&apos;f16ed2cf-7779-480b-af5c-b48ac7530793&apos;,&apos;457000&apos;,&apos;7cb4a6b5-8e4f-4bcc-b458-da60a3dd6ce9&apos;,&apos;${number}&apos;,&apos;2&apos;,null,null,&apos;0&apos;,&apos;4979fb1a-8373-4f99-b87b-0c4ee832da15&apos;,now(),now(),now()+interval&apos;10 years&apos;,now(),now(),true,&apos;f16ed2cf-7779-480b-af5c-b48ac7530793&apos;,null,&apos;${house}&apos;,&apos;${fias}&apos;,false,null,null,false);</stringProp>
               <stringProp name="queryArguments"></stringProp>
               <stringProp name="queryArgumentsTypes"></stringProp>
               <stringProp name="variableNames"></stringProp>
@@ -11023,28 +11108,14 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <stringProp name="queryTimeout"></stringProp>
               <stringProp name="resultSetHandler">Store as String</stringProp>
             </JDBCSampler>
-            <hashTree>
-              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
-                <stringProp name="cacheKey">ebd8bca4-ddd6-4491-aa4b-399df044e02d</stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="script">try{
-	HashMap hm=vars.getObject(&quot;znsihouse&quot;)[0]
-	vars.put(&quot;fias&quot;,hm.g)
-	vars.put(&quot;number&quot;,hm.n)
-}catch(e){}
-</stringProp>
-                <stringProp name="scriptLanguage">groovy</stringProp>
-              </JSR223PostProcessor>
-              <hashTree/>
-            </hashTree>
+            <hashTree/>
           </hashTree>
           <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="lcsdb" enabled="true"/>
           <hashTree>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S301/lcsdb/insertDoc" enabled="true">
               <stringProp name="dataSource">zlcs</stringProp>
-              <stringProp name="queryType">Select Statement</stringProp>
-              <stringProp name="query">insert into lcssm.documents values((select public.uuid_generate_v4()),null,null,null,null)returning document_id d;</stringProp>
+              <stringProp name="queryType">Update Statement</stringProp>
+              <stringProp name="query">insert into lcssm.documents values(&apos;${document}&apos;,null,null,null,null);</stringProp>
               <stringProp name="queryArguments"></stringProp>
               <stringProp name="queryArgumentsTypes"></stringProp>
               <stringProp name="variableNames"></stringProp>
@@ -11052,17 +11123,7 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <stringProp name="queryTimeout"></stringProp>
               <stringProp name="resultSetHandler">Store as String</stringProp>
             </JDBCSampler>
-            <hashTree>
-              <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
-                <stringProp name="cacheKey">ebd8bca4-ddd6-4491-aa4b-399df044e02d</stringProp>
-                <stringProp name="filename"></stringProp>
-                <stringProp name="parameters"></stringProp>
-                <stringProp name="script">vars.put(&quot;document&quot;,vars.getObject(&quot;zlcsdoc&quot;)[0].d)
-</stringProp>
-                <stringProp name="scriptLanguage">groovy</stringProp>
-              </JSR223PostProcessor>
-              <hashTree/>
-            </hashTree>
+            <hashTree/>
             <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="S301/lcsdb/insertAddress" enabled="true">
               <stringProp name="dataSource">zlcs</stringProp>
               <stringProp name="queryType">Update Statement</stringProp>
@@ -11236,9 +11297,23 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <stringProp name="RegexExtractor.refname">fias</stringProp>
               <stringProp name="RegexExtractor.regex">&lt;body&gt;(.+?)&lt;/body&gt;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">${failedToObtain_fias}</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
             </RegexExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1227307625">&lt;title&gt;OK&lt;/title&gt;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S302/supplyResourceContract/import" enabled="true">
@@ -11375,6 +11450,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
             <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
+            <hashTree/>
           </hashTree>
         </hashTree>
         <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="SDWS302" enabled="true">
@@ -11503,9 +11582,23 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <stringProp name="RegexExtractor.refname">fias</stringProp>
               <stringProp name="RegexExtractor.regex">&lt;body&gt;(.+?)&lt;/body&gt;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">${failedToObtain_fias}</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
             </RegexExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1227307625">&lt;title&gt;OK&lt;/title&gt;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S303/contract/upload" enabled="true">
@@ -11562,8 +11655,9 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <stringProp name="RegexExtractor.refname">fileGUID</stringProp>
               <stringProp name="RegexExtractor.regex">X-Upload-UploadID: (.{36})</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">${failedToObtain_fileGUID}</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
             </RegexExtractor>
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -11574,6 +11668,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <boolProp name="Assertion.assume_success">false</boolProp>
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S303/contract/import" enabled="true">
@@ -11713,6 +11811,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <boolProp name="Assertion.assume_success">true</boolProp>
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="__addQueueHouseGUID" enabled="true">
@@ -11863,9 +11965,23 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <stringProp name="RegexExtractor.refname">houseGUID</stringProp>
               <stringProp name="RegexExtractor.regex">&lt;body&gt;(.+?)&lt;/body&gt;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">${failedToObtain_houseGUID}</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
             </RegexExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1227307625">&lt;title&gt;OK&lt;/title&gt;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S304/houseuo/import" enabled="true">
@@ -11998,6 +12114,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <boolProp name="Assertion.assume_success">false</boolProp>
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="__addQueueRoomGUID" enabled="true">
@@ -12148,9 +12268,23 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <stringProp name="RegexExtractor.refname">roomGUID</stringProp>
               <stringProp name="RegexExtractor.regex">&lt;body&gt;(.+?)&lt;/body&gt;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">${failedToObtain_roomGUID}</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
             </RegexExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1227307625">&lt;title&gt;OK&lt;/title&gt;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S307/account/import" enabled="true">
@@ -12234,8 +12368,9 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <stringProp name="RegexExtractor.refname">accountGUID</stringProp>
               <stringProp name="RegexExtractor.regex">:GUID&gt;(.{36})</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">${failedToObtain_accountGUID}</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
             </RegexExtractor>
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
@@ -12246,6 +12381,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <boolProp name="Assertion.assume_success">false</boolProp>
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="__addQueueAccountGUID" enabled="true">
@@ -12464,6 +12603,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
             <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
+            <hashTree/>
           </hashTree>
         </hashTree>
         <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="SDWS310" enabled="true">
@@ -12642,6 +12785,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
             <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
+            <hashTree/>
           </hashTree>
         </hashTree>
         <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="SDWS312" enabled="true">
@@ -12770,9 +12917,23 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <stringProp name="RegexExtractor.refname">accountGUID</stringProp>
               <stringProp name="RegexExtractor.regex">&lt;body&gt;(.+?)&lt;/body&gt;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">${failedToObtain_accountGUID}</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
             </RegexExtractor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1227307625">&lt;title&gt;OK&lt;/title&gt;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="S314/paymentDocument/import" enabled="true">
@@ -12876,6 +13037,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <boolProp name="Assertion.assume_success">true</boolProp>
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
         </hashTree>
@@ -13000,8 +13165,9 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <stringProp name="RegexExtractor.refname">request</stringProp>
               <stringProp name="RegexExtractor.regex">(.+)</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default">${failedToObtain_request}</stringProp>
+              <stringProp name="RegexExtractor.default"></stringProp>
               <stringProp name="RegexExtractor.match_number">0</stringProp>
+              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
             </RegexExtractor>
             <hashTree/>
           </hashTree>
@@ -13049,6 +13215,10 @@ vars.put(&quot;struct&quot;,vars.get(&quot;structNumber&quot;)?&quot;\&quot;&quo
               <boolProp name="Assertion.assume_success">false</boolProp>
               <intProp name="Assertion.test_type">16</intProp>
             </ResponseAssertion>
+            <hashTree/>
+            <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+              <intProp name="OnError.action">4</intProp>
+            </ResultAction>
             <hashTree/>
           </hashTree>
         </hashTree>
@@ -13468,23 +13638,11 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
                   </collectionProp>
                 </HeaderManager>
                 <hashTree/>
-                <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="true">
-                  <stringProp name="cacheKey">9856fe29-a896-4576-811a-21e89fbb6cf4</stringProp>
-                  <stringProp name="filename"></stringProp>
-                  <stringProp name="parameters"></stringProp>
-                  <stringProp name="script">try{
-	def i=(Math.random()*10).toInteger()
-	def hm=new groovy.json.JsonSlurper().parseText(prev.getResponseDataAsString())
-	vars.put(&quot;roleCode&quot;,&quot;{\&quot;code\&quot;:\&quot;&quot;+hm.organizationSummaryWithNsiList[i].organizationRoles[0].role.code+&quot;\&quot;}&quot;)
-}catch(Exception e){
-	vars.put(&quot;roleCode&quot;,&apos;${failedToObtain_roleCode}&apos;)
-}finally{
-	vars.put(&quot;route&quot;,&quot;organizations&quot;)
-}
-
-</stringProp>
-                  <stringProp name="scriptLanguage">groovy</stringProp>
-                </JSR223PostProcessor>
+                <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+                  <stringProp name="JSONPostProcessor.referenceNames">roleCode</stringProp>
+                  <stringProp name="JSONPostProcessor.jsonPathExprs">$.organizationSummaryWithNsiList[*].organizationRoles[0].role.code</stringProp>
+                  <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+                </JSONPostProcessor>
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                   <collectionProp name="Asserion.test_strings">
@@ -13495,7 +13653,19 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
                   <intProp name="Assertion.test_type">16</intProp>
                 </ResponseAssertion>
                 <hashTree/>
+                <ResultAction guiclass="ResultActionGui" testclass="ResultAction" testname="Result Status Action Handler" enabled="true">
+                  <intProp name="OnError.action">4</intProp>
+                </ResultAction>
+                <hashTree/>
               </hashTree>
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="__S502/init" enabled="true">
+                <stringProp name="scriptLanguage">groovy</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="cacheKey"></stringProp>
+                <stringProp name="script">vars.put(&quot;route&quot;,&quot;organizations&quot;)</stringProp>
+              </JSR223Sampler>
+              <hashTree/>
             </hashTree>
           </hashTree>
         </hashTree>
@@ -14199,7 +14369,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-	   <stringProp name="LoopController.loops">0</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
@@ -14345,7 +14515,7 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
           <stringProp name="RESPONSE_CODE"></stringProp>
           <stringProp name="RESPONSE_MESSAGE"></stringProp>
           <stringProp name="REQUEST_DATA"></stringProp>
-          <stringProp name="RESPONSE_DATA">${fias}</stringProp>
+          <stringProp name="RESPONSE_DATA"></stringProp>
           <stringProp name="RESPONSE_TIME"></stringProp>
           <stringProp name="LATENCY"></stringProp>
           <stringProp name="CONNECT"></stringProp>
@@ -14392,36 +14562,6 @@ vars.put(&quot;route&quot;,&quot;&quot;)</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener" enabled="false">
-        <stringProp name="cacheKey">f8a134ae-2d12-4372-8ea8-456b96ca34c0</stringProp>
-        <stringProp name="filename"></stringProp>
-        <stringProp name="parameters"></stringProp>
-        <stringProp name="script">import org.apache.jmeter.services.FileServer
-try{
-	def m=prev.getThreadName()=~/^.+?\s(.+?)\s.+$/
-	String s=props.get(&quot;progdir&quot;);
-	if(!s){
-		s=FileServer.getFileServer().getBaseDir();
-		props.put(&quot;progdir&quot;,s);
-		new File(s+&quot;/results&quot;).mkdir();
-	}
-	FileOutputStream fos=null;
-	def asserts=prev.getAssertionResults()
-	def code
-	if(asserts){
-		code=asserts[0].isFailure()?&quot;ASS&quot;:prev.getResponseCode().substring(0,3)
-	}
-	while(!fos){fos=new FileOutputStream(s+&quot;/results&quot;+vars.get(&quot;uniq&quot;)+&quot;.&quot;+code+&quot;.&quot;+(m?m.group(1):&quot;&quot;)+&quot;.xml&quot;,true);}
-	fos.write((&quot;&lt;s t=\&quot;&quot;+new Date(prev.getStartTime()).format(&quot;yyyy-MM-dd HH:mm:ss&quot;)+&quot;\&quot; s=\&quot;&quot;+prev.getSampleLabel()+&quot;\&quot; g=\&quot;&quot;+prev.getThreadName()+&quot;\&quot;&gt;\n&lt;!--Request headers:\n&quot;+prev.getRequestHeaders().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Request body:\n&quot;+prev.getSamplerData().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Response header:\n&quot;+prev.getResponseHeaders().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;--&gt;\n&lt;!--Response body:\n&quot;+prev.getResponseDataAsString().replace(&quot;--&gt;&quot;,&quot;--!&gt;&quot;)+&quot;\n--&gt;\n&lt;/s&gt;\n&quot;).getBytes());
-	fos.flush();
-	fos.close();
-	fos.finalize();
-}catch(e){
-	log.error(&quot;Log writer error: &quot;+e.toString()+&quot;, at: t=\&quot;&quot;+new Date(prev.getStartTime()).format(&quot;yyyy-MM-dd HH:mm:ss&quot;)+&quot;\&quot; s=\&quot;&quot;+prev.getSampleLabel()+&quot;\&quot; g=\&quot;&quot;+prev.getThreadName())
-}</stringProp>
-        <stringProp name="scriptLanguage">groovy</stringProp>
-      </JSR223Listener>
-      <hashTree/>
       <BackendListener guiclass="BackendListenerGui" testclass="BackendListener" testname="Backend Listener" enabled="true">
         <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
           <collectionProp name="Arguments.arguments">
